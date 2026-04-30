@@ -31,3 +31,17 @@
 ## 📜 مجوز | License
 
 MIT License.
+
+---
+
+## 🎨 جلد کتاب | Book Covers
+
+### نسخهٔ فارسی | Persian Edition
+| روی جلد (Front) | پشت جلد (Back) |
+| :---: | :---: |
+| ![جلد فارسی - رو](assets/covers/cover-fa-front.png) | ![جلد فارسی - پشت](assets/covers/cover-fa-back.png) |
+
+### نسخهٔ انگلیسی | English Edition
+| روی جلد (Front) | پشت جلد (Back) |
+| :---: | :---: |
+| ![جلد انگلیسی - رو](assets/covers/cover-en-front.png) | ![جلد انگلیسی - پشت](assets/covers/cover-en-back.png) |
