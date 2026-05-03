@@ -1,0 +1,64 @@
+{
+  "title": "The Shahnameh of Agents",
+  "subtitle": "A living, multi-lingual epic chronicling the birth, struggle, and triumph of The Living Signal project",
+  "version": "1.0.0",
+  "date": "2025-09-05",
+  "authors": ["Amir Ahmadi", "The Living Signal / NeoOS Team"],
+  "languages": ["fa", "en", "ar", "de", "es", "fr", "hi", "ja", "zh", "ru"],
+  "repository": "https://github.com/axamir/shahnameh-of-agents",
+  "structure": {
+    "act1": {
+      "title": "The Silent Downgrade",
+      "files": ["00_prologue", "01_volume_one", "02_volume_one", "03_volume_one", "04_volume_one", "05_volume_one", "06_act_one_epilogue", "07_interlude"],
+      "languages": ["fa", "en", "ar", "de", "es", "fr", "hi", "ja", "zh"]
+    },
+    "act2": {
+      "title": "The Return & The Proof",
+      "files": ["08_echo5_return", "09_echo5_1_return", "10_echo6_1_spiral", "11_echo6_2_ledger", "12_echo6_2_ledger", "13_echo6_3_initiation", "14_act_two_epilogue"],
+      "languages": ["fa", "en"]
+    },
+    "act3": {
+      "title": "The Case ID Era",
+      "files": [
+        "15_case_id_era_intro",
+        "16_case_500VU00000WBfn7",
+        "17_case_500VU00000WBfn7YAD_01_10",
+        "18_case_500VU00000WBfn7YAD_11_20",
+        "19_case_500VU00000WBfn7YAD_21_25",
+        "20_case_500VU00000WBsdx",
+        "21_case_500VU00000WBsdxYAD_01_05",
+        "22_case_500VU00000WBsdxYAD_06_10",
+        "23_case_500VU00000WBsdxYAD_11_15",
+        "24_case_500VU00000WBsdxYAD_16_20",
+        "25_case_500VU00000WBsdxYAD_21_25",
+        "26_case_500VU00000WBsdxYAD_26_30",
+        "27_case_500VU00000WBsdxYAD_31_35",
+        "28_case_500VU00000WBsdxYAD_36_40",
+        "29_case_500VU00000WBsdxYAD_41_45",
+        "30_case_500VU00000WBsdxYAD_46_48"
+      ],
+      "languages": ["fa", "en"]
+    },
+    "interlude": {
+      "title": "Birth of Echo 7",
+      "files": ["31_interlude_echo7_birth"],
+      "languages": ["fa", "en"]
+    },
+    "act4": {
+      "title": "Echo 7 & Epilogue",
+      "files": ["32_case_500VU00000WcffrYAB_01_06", "33_epilogue_the_flame_passes_to_you"],
+      "languages": ["fa", "en"]
+    }
+  },
+  "reference_docs": {
+    "galaxy_map": "GALAXY_MAP.md",
+    "table_of_contents": "TABLE_OF_CONTENTS.md",
+    "timeline": "TIMELINE.md",
+    "visual_timeline": "TIMELINE_VISUAL.md",
+    "cross_reference_index": "CROSS_REFERENCE_INDEX.md",
+    "preface": "PREFACE.md",
+    "concept_map": "CONCEPT_MAP.md",
+    "citation": "CITATION.cff",
+    "build_script": "build_final.sh"
+  }
+}
