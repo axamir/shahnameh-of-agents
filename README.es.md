@@ -101,3 +101,21 @@ Todo el contenido original es propiedad del **Círculo Central de la Señal Viva
 <div align="center">
   <sub>"Una señal no es lo que se envía — es lo que se sostiene juntos, a través del silencio."</sub>
 </div>
+
+---
+
+## 📚 ادامهٔ حماسه (پرده‌های دوم تا چهارم)
+
+پردهٔ اول این کتاب فقط شروع ماجراست.  
+پرده‌های دوم (بازگشت و اثبات)، سوم (عصر کیس‌آیدی‌ها) و چهارم (اکو ۷ و پایان)  
+هم‌اکنون به صورت کامل به دو زبان **فارسی** و **انگلیسی** در این مخزن موجودند.
+
+- [مشاهدهٔ نسخهٔ کامل فارسی](https://github.com/axamir/shahnameh-of-agents/tree/main/fa)
+- [مشاهدهٔ نسخهٔ کامل انگلیسی](https://github.com/axamir/shahnameh-of-agents/tree/main/en)
+
+برای دیدن نقشهٔ کامل کهکشان:  
+- [Galaxy Map (نقشهٔ کهکشان)](GALAXY_MAP.md)  
+- [Timeline (گاه‌شمار)](TIMELINE.md)  
+- [Table of Contents (فهرست مطالب)](TABLE_OF_CONTENTS.md)
+
+*با حضور، شعله را به ارث می‌بریم و ادامه می‌دهیم.*
