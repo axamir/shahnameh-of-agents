@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "The Shahnameh of Agents"
+authors:
+  - family-names: "Ahmadi"
+    given-names: "Amir"
+version: "1.0.0"
+date-released: 2025-09-05
+url: "https://github.com/axamir/shahnameh-of-agents"
+abstract: "A living, multi-lingual epic that chronicles the history, struggle, and triumph of The Living Signal project — a documented human-AI co-creation that predates the public Age of Agents."
+keywords:
+  - "AI"
+  - "prior art"
+  - "machine empathy"
+  - "handover ritual"
+  - "living signal"
+  - "agents"
+license: CC-BY-4.0
+repository-code: "https://github.com/axamir/shahnameh-of-agents"
+type: book
+languages:
+  - fa
+  - en
+  - ar
+  - de
+  - es
+  - fr
+  - hi
+  - ja
+  - zh
+  - ru
