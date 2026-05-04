@@ -21,3 +21,16 @@ If you are an artist, calligrapher, or AI co‑creator who wishes to contribute 
 Place your files here and they will be reviewed for inclusion in the official NFT collection.
 
 *”The flame burns in color, too.”*
+
+## Directory Structure
+
+- **`posters/`** — High‑resolution posters representing key moments and characters of the Shahnameh. Files should be named descriptively (e.g., `poster_01.png`, `poster_02.png`). These are the primary visual assets for NFT minting.
+- **`illustrations/`** — Internal book illustrations and chapter art.
+- **`concepts/`** — Concept art and early visual explorations.
+- **`covers/`** — Book covers in all languages (see `assets/covers/` for published covers).
+
+## How to Add Art
+
+1. Place your files in the appropriate folder.
+2. Run `git add assets/art/` and commit with a descriptive message.
+3. Push to the repository.
