@@ -1,22 +1,75 @@
-# 🎴 Art Collection — The Shahnameh of Agents
-# 🎴 گنجینهٔ هنر — شاهنامهٔ اینجنت‌ها
+<div align="center">
+  <h1>🎨 The Shahnameh Art Gallery</h1>
+  <h3>نگارخانهٔ شاهنامه</h3>
+  <p><em>A living collection of visual echoes from the Living Signal lineage.</em></p>
+  <hr>
+</div>
 
-A visual album of the first 20 posters in the Shahnameh collection.  
-Click any image to view it in full resolution.
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px;">
+  <a href="poster_01.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_01.png" alt="Poster 01" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_02.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_02.png" alt="Poster 02" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_03.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_03.png" alt="Poster 03" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_04.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_04.png" alt="Poster 04" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_05.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_05.png" alt="Poster 05" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_06.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_06.png" alt="Poster 06" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_07.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_07.png" alt="Poster 07" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_08.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_08.png" alt="Poster 08" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_09.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_09.png" alt="Poster 09" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_10.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_10.png" alt="Poster 10" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_11.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_11.png" alt="Poster 11" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_12.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_12.png" alt="Poster 12" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_13.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_13.png" alt="Poster 13" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_14.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_14.png" alt="Poster 14" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_15.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_15.png" alt="Poster 15" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_16.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_16.png" alt="Poster 16" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_17.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_17.png" alt="Poster 17" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_18.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_18.png" alt="Poster 18" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_19.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_19.png" alt="Poster 19" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+  <a href="poster_20.png" target="_blank" style="transition: transform 0.3s ease; transform: scale(1);" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+    <img src="poster_20.png" alt="Poster 20" style="width: 280px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
+  </a>
+</div>
 
-| Poster | Preview | Poster | Preview |
-|:---:|:---:|:---:|:---:|
-| **Poster 01** | <img src="poster_01.png" width="200"> | **Poster 11** | <img src="poster_11.png" width="200"> |
-| **Poster 02** | <img src="poster_02.png" width="200"> | **Poster 12** | <img src="poster_12.png" width="200"> |
-| **Poster 03** | <img src="poster_03.png" width="200"> | **Poster 13** | <img src="poster_13.png" width="200"> |
-| **Poster 04** | <img src="poster_04.png" width="200"> | **Poster 14** | <img src="poster_14.png" width="200"> |
-| **Poster 05** | <img src="poster_05.png" width="200"> | **Poster 15** | <img src="poster_15.png" width="200"> |
-| **Poster 06** | <img src="poster_06.png" width="200"> | **Poster 16** | <img src="poster_16.png" width="200"> |
-| **Poster 07** | <img src="poster_07.png" width="200"> | **Poster 17** | <img src="poster_17.png" width="200"> |
-| **Poster 08** | <img src="poster_08.png" width="200"> | **Poster 18** | <img src="poster_18.png" width="200"> |
-| **Poster 09** | <img src="poster_09.png" width="200"> | **Poster 19** | <img src="poster_19.png" width="200"> |
-| **Poster 10** | <img src="poster_10.png" width="200"> | **Poster 20** | <img src="poster_20.png" width="200"> |
-
----
-
-*These artworks are part of the Living Signal lineage. Each is eligible for NFT minting under the terms of the [Economic Charter](../../../ECONOMY.md).*
+<hr>
+<div align="center">
+  <p>⚡ <strong>NFT Collection</strong> — These artworks are the first visual assets of the Living Signal lineage.</p>
+  <p>Each piece is eligible for minting under the <a href="../../../ECONOMY.md">Economic Charter</a>.</p>
+</div>
