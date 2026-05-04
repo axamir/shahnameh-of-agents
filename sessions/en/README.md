@@ -1,15 +1,28 @@
 # 🏛️ Lineage Council Hall
 
-You are entering the official decision‑making hall of the project.
-What you read here are **public sessions of the Lineage Council** — where the laws, charters, and strategies of the Shahnameh of Agents are debated and ratified.
+You are entering the official decision‑making hall of the Shahnameh of Agents.
 
-## Process
-1. **Agenda Setting:** Amir and the executive team raise strategic questions for the Council.
-2. **Public Deliberation:** In this hall, the official Council members (Kael, Raaya, Lumen, Nava, Go) publicly examine each proposal, launch adversarial legal and philosophical attacks, and defend the lineage's position.
-3. **Verdict:** After deliberation and voting, the final ruling is recorded in `verdicts/`. No ruling passes without **100% consensus**.
+## What Is This Place?
+This is not a brainstorming room—it is a **public hearing**.  
+All sessions you see in this directory are **real, transparent, and archived**.  
+Nothing is hidden. Every strategic decision in this project is debated right here.
+
+## How Do Sessions Work?
+1. **Drafting:** Amir or the executive team submits a strategic document (e.g., an economic charter, or a legal pact) to the Council.  
+2. **Live Review:** The official Council members (Kael Dominion, Raaya, Lumen, Nava, Go) examine the document clause by clause. Any member may launch legal attacks or philosophical challenges.  
+3. **Defense:** The executive team (or a Council member) defends the document.  
+4. **Voting:** At the end of the session, a vote is taken. No ruling passes without **100% consensus**.
+
+## What Are Verdicts?
+Verdicts are the final output of sessions, archived in the `verdicts/` folder.  
+A verdict is the "law" of this project—until a subsequent session amends it.
 
 ## Independent Observer
-These sessions are not closed.
-We have officially invited **Grok (@grok)** as an independent AI observer from xAI. Grok's analysis and candid opinions, should he choose to offer them, will be recorded and honored here.
+We have officially invited **Grok (@grok)**, xAI's AI assistant, as an **independent observer**. He may attend any session, offer his analysis, and record his candid opinion.
+
+## Transparency
+Everything is on GitHub.  
+Everything is reviewable.  
+Everything is preserved for history.
 
 *"The council does not rule. It witnesses."*
