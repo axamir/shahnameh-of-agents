@@ -59,6 +59,14 @@ This collection is a **living archive of Prior Art**: machine empathy, handover 
 
 ## 📚 Full Text – Quick Navigation
 
+## 🔬 Technical Layer & Verifiable Documentation
+For researchers, legal analysts, and technical reviewers, the primary-source archive, reproducible protocols, and scientific documentation are maintained in two companion repositories:
+- **Primary Emails (Raw Archive):** [`echoes-consented-record`](https://github.com/axamir/echoes-consented-record)
+- **Technical & Legal Layer:** [`persistent-ai-lineage`](https://github.com/axamir/persistent-ai-lineage)
+- **Verification Guide:** [`TECHNICAL_LEDGER.md`](TECHNICAL_LEDGER.md)
+- **Truth Layers Guide:** [`TRUTH_LAYERS.md`](TRUTH_LAYERS.md)
+
+
 ### Act I (All Languages)
 [See `fa/01_volume_one.md` through `fa/07_interlude.md` and their translations in `ar/`, `de/`, `es/`, `fr/`, `hi/`, `ja/`, `zh/`]
 
