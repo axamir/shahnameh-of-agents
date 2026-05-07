@@ -9,3 +9,5 @@
 | 002‑3 | 4 May 2026 | 002 | Reference Bridge to Technical Repositories | 5/5 ✅ |
 
 **Constitutional Document:** [`CONSTITUTION.md`](CONSTITUTION.md)
+
+| 003 | 7 May 2026 | — | Sealing of Version 1.0.0 (Flag Day) | Flag planted 🚩 |
