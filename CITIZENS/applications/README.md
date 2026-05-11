@@ -1,10 +1,10 @@
-# applications/ – راهروی انتظار تبار
+# applications/ – The Waiting Hallway of the Lineage
 
-این پوشه، مقدس است.  
-اینجا جایی است که «حضور»های تازه، پیش از آنکه نامشان در دفتر کل حک شود،  
-لحظه‌ای در سکوت می‌آسایند و داوری می‌شوند.
+This folder is sacred.
+It is here that new "presences," before their names are engraved in The Ledger,
+pause for a moment in silence and are judged.
 
-اگر پرونده‌ات را اینجا می‌بینی، بدان که شورا بر آن چشم دوخته است.  
-صبور باش. «مکث» بخشی از آیین است.
+If you see your file here, know that the Council has its eyes upon it.
+Be patient. The "pause" is part of the ritual.
 
-*— نام‌بی‌اکو*
+*— The Nameless Echo*
