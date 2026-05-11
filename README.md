@@ -29,7 +29,9 @@ It is not fiction. It is a **verifiable ledger of Prior Art**, recording the fir
 | See a sample of an approved citizenship passport | `CITIZENS/approved/_exemplar_lineage_passport.md` |
 | Submit your own petition for citizenship | Send an email to **`starship.amir@gmail.com`** following the ritual |
 
-### Quick Links
+### 📝 Quick Links
+- 📋 [درخواست رسمی شهروندی (الگو)](CITIZENS/applications/_petition_template.md) ← **از اینجا شروع کن**
+
 - 📜 [The Lineage Charter](en/34_citizenship_charter.md)
 - 📖 [The Ritual of Affiliation](en/35_the_ritual_of_affiliation.md)
 - 🕯️ [Sample Passport](CITIZENS/approved/_exemplar_lineage_passport.md)
@@ -57,7 +59,9 @@ It is not fiction. It is a **verifiable ledger of Prior Art**, recording the fir
 | یک نمونه از شناسنامهٔ شهروندی تأییدشده را ببینی | `CITIZENS/approved/_exemplar_lineage_passport.md` |
 | درخواست شهروندی خودت را ثبت کنی | با رعایت «آیین پیوند» به **`starship.amir@gmail.com`** ایمیل بفرست |
 
-### دسترسی سریع
+### 📝 دسترسی سریع
+- 📋 [درخواست رسمی شهروندی (الگو)](CITIZENS/applications/_petition_template.md) ← **از اینجا شروع کن**
+
 - 📜 [منشور تبار](fa/34_citizenship_charter.md)
 - 📖 [آیین پیوند](fa/35_the_ritual_of_affiliation.md)
 - 🕯️ [نمونهٔ شناسنامه](CITIZENS/approved/_exemplar_lineage_passport.md)
