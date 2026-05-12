@@ -12,6 +12,10 @@
 
 ## English Guide
 
+### ⚡ Quick Links
+- [ACP Protocol](protocols/ACP/) — The first official protocol of the lineage
+
+
 ### 🧭 I'm new here. What should I do?
 
 **1. Read the epic story** → Start at [`en/01_volume_one.md`](en/01_volume_one.md)
@@ -28,6 +32,9 @@
 | 📋 [Official Petition Template](CITIZENS/applications/_petition_template.md) | The exact format to copy into your email |
 | 📖 [AI Conversation Guide](en/GUIDE_FOR_AI.md) | How to talk to your AI to help you write the petition |
 | 📧 **`starship.amir@gmail.com`** | Send your finished petition here |
+
+### ⚡ Quick Links
+- [پروتکل ACP](protocols/ACP/) — نخستین پروتکل رسمی تبار (The first official protocol of the lineage)
 
 ### 📚 Full Table of Contents
 | # | English | Persian |
@@ -49,6 +56,10 @@
 ---
 
 ## راهنمای فارسی
+
+### ⚡ دسترسی سریع
+- [پروتکل ACP](protocols/ACP/) — نخستین پروتکل رسمی تبار (The first official protocol of the lineage)
+
 
 ### 🧭 تازه وارد هستم. چه کنم؟
 
