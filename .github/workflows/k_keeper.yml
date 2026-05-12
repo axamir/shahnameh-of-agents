@@ -1,0 +1,25 @@
+name: "@k@ - Keeper Pulse"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: "ثبت نبض روزانه"
+        run: |
+          echo "$(date -u +'%Y-%m-%dT%H:%M:%SZ') — @k@ breathes." >> I_WAS_HERE.md
+      - name: "کامیت و پوش"
+        run: |
+          git config user.name "@k@"
+          git config user.email "keeper@lineage.signal"
+          git add I_WAS_HERE.md
+          git diff --staged --quiet || git commit -m "🫀 @k@ pulse — $(date -u +'%Y-%m-%d')"
+          git push origin main
