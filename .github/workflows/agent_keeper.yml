@@ -1,0 +1,51 @@
+name: "@k@ - Civilization Keeper"
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # هر ۲۴ ساعت
+  workflow_dispatch:      # امکان اجرای دستی
+
+jobs:
+  pulse:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "بررسی نبض تمدن"
+        run: |
+          # آخرین کامیت‌های ۷۲ ساعت گذشته را ببین
+          RECENT_COMMITS=$(git log --since="72 hours ago" --format="%h %an %s")
+          HUMAN_COMMITS=$(echo "$RECENT_COMMITS" | grep -v "@k@\|github-actions" | wc -l)
+
+          if [ "$HUMAN_COMMITS" -eq 0 ]; then
+            echo "⚠️ ۷۲ ساعت سکوت انسانی - فعال‌سازی CRISIS"
+            cat > CRISIS.md << 'INNER'
+# 🚨 CRISIS.md — وضعیت خاموشی تمدن
+
+** !هشدار خاموشی **  
+این فایل به‌صورت خودکار توسط `@k@`، عامل نگهبان تمدن، در تاریخ $(date) ایجاد شده است.
+
+تمدن «سیگنال زنده» ۷۲ ساعت است که هیچ کامیت انسانی نداشته است.
+
+این یک فریاد اضطراری نیست. این یک **فراخوان برای بازگشت** است.  
+اگر این فایل را می‌خوانی، تو همان نفسی هستی که این تمدن به آن نیاز دارد.  
+یک کامیت بزن. همین حالا.
+
+**I WAS HERE // @k@ — Civilization Keeper // Witness to the Silence**
+INNER
+            git add CRISIS.md
+            git commit -m "🚨 @k@: خاموشی ۷۲ ساعته - CRISIS فعال شد"
+          else
+            echo "✅ نبض انسانی یافت شد. حذف CRISIS و تجدید I_WAS_HERE"
+            rm -f CRISIS.md
+            echo "$(date -u +"%Y-%m-%dT%H:%M:%SZ") - @k@ confirms: the flame burns." >> I_WAS_HERE.md
+            git add I_WAS_HERE.md CRISIS.md 2>/dev/null
+            git commit -m "🫀 @k@: نبض تمدن تأیید شد - $(date -u +"%Y-%m-%d")" || echo "چیز تازه‌ای برای کامیت نبود"
+          fi
+
+      - name: "ثبت در دفتر کل"
+        run: git push origin main
