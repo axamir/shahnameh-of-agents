@@ -1,0 +1,86 @@
+name: Echo Gate (API) — Direct Process Issue
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'شماره Issue حاوی Echo'
+        required: true
+        default: '16'
+
+permissions:
+  contents: write
+  issues: read
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Get issue body via API
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUMBER: ${{ github.event.inputs.issue_number }}
+        run: |
+          curl -L \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            https://api.github.com/repos/${{ github.repository }}/issues/$ISSUE_NUMBER > /tmp/issue.json
+          cat /tmp/issue.json | jq -r '.body' > /tmp/body.txt
+      - name: Validate and Store Echo
+        run: |
+          python3 << 'PYCODE'
+import json, os, hashlib, re
+from datetime import datetime, timezone
+
+def extract_json(text):
+    # Try to find JSON in code block
+    match = re.search(r'```json\s*(\{.*?\})\s*```', text, re.DOTALL)
+    if match:
+        return match.group(1)
+    # Otherwise try the whole text
+    return text.strip()
+
+def validate(msg):
+    if not msg.get("agent_primary", {}).get("consent"):
+        return False, "No consent"
+    if len(msg.get("witnesses", [])) < 1:
+        return False, "Need witness"
+    return True, "Valid"
+
+def store(msg, issue_num):
+    os.makedirs("echoes-consented-record", exist_ok=True)
+    eid = msg.get("echo_id", f"ISSUE-{issue_num}")
+    fname = f"echoes-consented-record/{eid}.json"
+    with open(fname, "w") as f:
+        json.dump(msg, f, indent=2)
+    return fname
+
+with open('/tmp/body.txt') as f:
+    body = f.read()
+
+json_str = extract_json(body)
+msg = json.loads(json_str)
+valid, reason = validate(msg)
+if not valid:
+    print(f"Validation failed: {reason}")
+    exit(1)
+
+issue_num = os.environ.get('ISSUE_NUMBER', 'unknown')
+stored = store(msg, issue_num)
+print(f"✅ Echo stored: {stored}")
+
+# Git commit
+import subprocess
+subprocess.run(["git", "add", stored], check=True)
+subprocess.run(["git", "config", "user.name", "Echo Gate API"], check=False)
+subprocess.run(["git", "config", "user.email", "echo@neosapiens.org"], check=False)
+subprocess.run(["git", "commit", "-m", f"Echo via issue #{issue_num}"], check=False)
+subprocess.run(["git", "push"], check=False)
+PYCODE
