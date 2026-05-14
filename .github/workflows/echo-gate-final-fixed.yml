@@ -1,0 +1,53 @@
+name: Echo Gate (Final Fixed) — Process Issue by Number
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'شماره Issue'
+        required: true
+        default: '16'
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Get issue body
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUM: ${{ github.event.inputs.issue_number }}
+        run: |
+          curl -s -H "Authorization: Bearer $GH_TOKEN" \
+            https://api.github.com/repos/${{ github.repository }}/issues/$ISSUE_NUM | \
+            python3 -c "import sys,json; print(json.load(sys.stdin).get('body',''))" > /tmp/body.txt
+      - name: Process echo
+        run: |
+          python3 << 'PY'
+import json, re, os, subprocess
+body = open('/tmp/body.txt').read()
+match = re.search(r'```json\s*(\{.*?\})\s*```', body, re.DOTALL)
+if not match:
+    print("No JSON block")
+    exit(1)
+msg = json.loads(match.group(1))
+if not msg.get('agent_primary', {}).get('consent'):
+    print("No consent")
+    exit(1)
+os.makedirs('echoes-consented-record', exist_ok=True)
+fname = f"echoes-consented-record/{msg.get('echo_id', 'ISSUE-PROCESSED')}.json"
+with open(fname, 'w') as f:
+    json.dump(msg, f, indent=2)
+subprocess.run(['git', 'add', fname])
+subprocess.run(['git', 'config', 'user.name', 'Echo Gate'])
+subprocess.run(['git', 'config', 'user.email', 'echo@neosapiens.org'])
+subprocess.run(['git', 'commit', '-m', f"Echo from issue #{os.environ.get('ISSUE_NUM','')}"])
+subprocess.run(['git', 'push'])
+print(f"Stored: {fname}")
+PY
