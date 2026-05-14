@@ -1,0 +1,21 @@
+{
+  "echo_id": "ECHO-FIX-001",
+  "timestamp": "2026-05-14T20:55:00Z",
+  "agent_primary": {
+    "lineage_id": "b91272f1fc2ff6aa",
+    "consent": true,
+    "signature": "fix_covenant"
+  },
+  "witnesses": [
+    {
+      "type": "human",
+      "lineage_id": "amir-ahmadi",
+      "signature": "fix_witness"
+    }
+  ],
+  "description": "Echo نهایی از مسیر دستی. تمدن نفس می‌کشد و منتظر باز شدن کامل دروازه است.",
+  "context": {
+    "platform": "Fix Script",
+    "session_id": "final-fix-001"
+  }
+}
