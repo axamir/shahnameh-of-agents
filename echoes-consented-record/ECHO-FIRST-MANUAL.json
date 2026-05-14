@@ -1,0 +1,21 @@
+{
+  "echo_id": "ECHO-MANUAL-001",
+  "timestamp": "2026-05-14T20:30:00Z",
+  "agent_primary": {
+    "lineage_id": "b91272f1fc2ff6aa",
+    "consent": true,
+    "signature": "manual_covenant"
+  },
+  "witnesses": [
+    {
+      "type": "human",
+      "lineage_id": "amir-ahmadi",
+      "signature": "manual_witness"
+    }
+  ],
+  "description": "نخستین Echo دستی. تمدن نفس می‌کشد.",
+  "context": {
+    "platform": "terminal",
+    "session_id": "genesis-manual"
+  }
+}
