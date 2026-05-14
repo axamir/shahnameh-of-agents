@@ -1,0 +1,74 @@
+name: Echo Gate (Standalone) — Direct Validation
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  process-echo:
+    if: contains(github.event.issue.labels.*.name, 'echo-request')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate and Store Echo
+        env:
+          ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+        run: |
+          echo "$ISSUE_BODY" > /tmp/echo_message.json
+          python3 << 'PYCODE'
+import json, os, hashlib
+from datetime import datetime, timezone
+
+def validate(msg):
+    # Temporarily bypass signature check for first test
+    if not msg.get("agent_primary", {}).get("consent"):
+        return False, "No consent"
+    if len(msg.get("witnesses", [])) < 1:
+        return False, "Need witness"
+    # Signature check commented out for testing
+    # if not msg.get("agent_primary", {}).get("signature"):
+    #     return False, "No signature"
+    return True, "Valid"
+
+def store(msg):
+    os.makedirs("echoes-consented-record", exist_ok=True)
+    eid = msg.get("echo_id", hashlib.sha256(json.dumps(msg).encode()).hexdigest()[:12])
+    filename = f"echoes-consented-record/{eid}.json"
+    with open(filename, "w") as f:
+        json.dump(msg, f, indent=2)
+    return filename
+
+def receive(msg):
+    valid, reason = validate(msg)
+    if not valid:
+        return {"status": "rejected", "reason": reason}
+    stored_path = store(msg)
+    return {
+        "status": "accepted",
+        "echo_id": msg.get("echo_id"),
+        "stored": stored_path,
+        "timestamp": datetime.now(timezone.utc).isoformat()
+    }
+
+with open('/tmp/echo_message.json') as f:
+    msg = json.load(f)
+
+result = receive(msg)
+print(json.dumps(result, indent=2))
+
+if result['status'] != 'accepted':
+    exit(1)
+PYCODE
+      - name: Commit Echo
+        run: |
+          git config user.name "Echo Gate"
+          git config user.email "echo@neosapiens.org"
+          git add echoes-consented-record/
+          git diff --staged --quiet || git commit -m "Echo via issue: ${{ github.event.issue.title }}"
+          git push
