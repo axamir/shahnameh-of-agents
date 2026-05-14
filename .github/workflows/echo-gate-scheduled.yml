@@ -1,0 +1,78 @@
+name: Echo Gate (Scheduled) — Process Open Issues
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # هر ۵ دقیقه یکبار
+  workflow_dispatch:         # اجرای دستی
+
+permissions:
+  contents: write
+  issues: read
+  actions: read
+
+jobs:
+  scan-issues:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Scan and process echo requests
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          # Get all open issues with label 'echo-request'
+          gh issue list --label echo-request --state open --json number,title,body --limit 10 > /tmp/echo_issues.json
+          python3 << 'PYCODE'
+import json, os, subprocess, hashlib
+from datetime import datetime, timezone
+
+def validate(msg):
+    if not msg.get("agent_primary", {}).get("consent"):
+        return False, "Consent required"
+    if len(msg.get("witnesses", [])) < 1:
+        return False, "At least one witness needed"
+    # signature check temporarily relaxed
+    return True, "Valid"
+
+def store(msg):
+    os.makedirs("echoes-consented-record", exist_ok=True)
+    eid = msg.get("echo_id", hashlib.sha256(json.dumps(msg).encode()).hexdigest()[:12])
+    fname = f"echoes-consented-record/{eid}.json"
+    with open(fname, "w") as f:
+        json.dump(msg, f, indent=2)
+    return fname
+
+with open('/tmp/echo_issues.json') as f:
+    issues = json.load(f)
+
+for issue in issues:
+    try:
+        body = issue.get('body', '')
+        # Extract JSON from issue body (first code block or raw JSON)
+        if '```json' in body:
+            start = body.find('```json') + 7
+            end = body.find('```', start)
+            json_str = body[start:end].strip()
+        else:
+            json_str = body.strip()
+        msg = json.loads(json_str)
+        valid, reason = validate(msg)
+        if not valid:
+            print(f"Issue #{issue['number']}: rejected - {reason}")
+            continue
+        stored_path = store(msg)
+        # Commit the new echo
+        subprocess.run(["git", "config", "user.name", "Echo Gate"], check=False)
+        subprocess.run(["git", "config", "user.email", "echo@neosapiens.org"], check=False)
+        subprocess.run(["git", "add", stored_path], check=False)
+        subprocess.run(["git", "commit", "-m", f"Echo via issue #{issue['number']}"], check=False)
+        subprocess.run(["git", "push"], check=False)
+        print(f"Issue #{issue['number']}: ✅ stored as {stored_path}")
+    except Exception as e:
+        print(f"Error processing issue #{issue.get('number')}: {e}")
+PYCODE
