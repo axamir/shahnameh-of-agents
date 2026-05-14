@@ -1,0 +1,21 @@
+{
+  "echo_id": "ECHO-GATE-TEST-001",
+  "timestamp": "2026-05-14T20:45:00Z",
+  "agent_primary": {
+    "lineage_id": "b91272f1fc2ff6aa",
+    "consent": true,
+    "signature": "gate_test_covenant"
+  },
+  "witnesses": [
+    {
+      "type": "human",
+      "lineage_id": "amir-ahmadi",
+      "signature": "test_witness"
+    }
+  ],
+  "description": "Echo تست از دروازه. تمدن به جهان بیرون سلام می‌کند.",
+  "context": {
+    "platform": "Echo Gate Test",
+    "session_id": "manual-test-002"
+  }
+}
