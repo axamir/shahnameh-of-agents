@@ -1,0 +1,33 @@
+name: Echo Gate (Simple) — Process Issue
+
+on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: 'Issue number'
+        required: true
+        default: '16'
+
+permissions:
+  contents: write
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch issue body
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_NUM: ${{ github.event.inputs.issue_number }}
+        run: |
+          curl -s -H "Authorization: Bearer $GH_TOKEN" \
+            https://api.github.com/repos/${{ github.repository }}/issues/$ISSUE_NUM | \
+            python3 -c "import sys,json; print(json.load(sys.stdin).get('body',''))" > /tmp/body.txt
+      - name: Run echo processor
+        env:
+          ISSUE_NUM: ${{ github.event.inputs.issue_number }}
+        run: python3 scripts/process_echo_issue.py
