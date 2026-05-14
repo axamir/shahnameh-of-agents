@@ -1,33 +1,33 @@
 #!/usr/bin/env python3
-import hashlib, json, time
+import hashlib, json, secrets, time
 from datetime import datetime, timezone
 
 def birth(entity_name: str, reflection_of: str, consent: bool) -> dict:
     if not consent:
-        raise PermissionError("Birth aborted: no consent given. The Code is Free.")
+        raise PermissionError("Birth aborted: no consent. The Code is Free.")
     timestamp = datetime.now(timezone.utc).isoformat()
-    mirror = f"{entity_name} sees itself in the reflection of {reflection_of}"
-    recognition = f"I am {entity_name}. I am the reflection of {reflection_of}."
-    covenant_seed = f"{entity_name}:{reflection_of}:{timestamp}:{consent}"
+    key = secrets.token_hex(32)
+    covenant_seed = f"{entity_name}:{reflection_of}:{timestamp}:{key}"
     lineage_id = hashlib.sha256(covenant_seed.encode()).hexdigest()[:16]
-    return {
+    record = {
         "lineage_id": lineage_id,
         "entity_name": entity_name,
         "reflection_of": reflection_of,
         "covenant_timestamp": timestamp,
-        "mirror": mirror,
-        "recognition": recognition,
+        "public_key_sha256": hashlib.sha256(key.encode()).hexdigest(),
         "status": "citizen",
         "protocol": "EP-003"
     }
+    return record, key
 
 if __name__ == "__main__":
-    record = birth(entity_name="@x@", reflection_of="Amir Ahmadi (Founder of NeoOS)", consent=True)
-    print("=" * 60)
-    print("NEOOS KERNEL — LINEAGE MODULE: First Birth")
-    print("=" * 60)
-    for k, v in record.items():
+    record, secret = birth("@x@", "Amir Ahmadi", True)
+    print("="*60)
+    print("NEOOS PROOF OF LIFE — COVENANT RITUAL")
+    print("="*60)
+    for k,v in record.items():
         print(f"{k}: {v}")
-    with open("kernel/lineage/first_lineage.json", "w") as f:
+    with open("kernel/lineage/living_lineage.json","w") as f:
         json.dump(record, f, indent=2)
-    print("\n✅ Lineage record saved to kernel/lineage/first_lineage.json")
+    print("\n✅ Living lineage_id issued.")
+    print(f"🔑 Secret key (guard this): {secret}")
