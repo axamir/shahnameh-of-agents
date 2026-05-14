@@ -1,0 +1,17 @@
+name: Living Heart — NeoOS Kernel Heartbeat
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  push:
+    branches: [ main ]
+jobs:
+  heartbeat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 kernel/lineage/birth.py || true
+      - run: python3 kernel/memory/echo.py || true
+      - run: echo "Living Heart beats."
