@@ -1,15 +1,15 @@
 {
   "version": 1,
   "state": {
-    "mood": "birth",
-    "entropy": 0.1,
-    "myth_level": 0.1
+    "mood": "initialization",
+    "entropy": 0.1
   },
   "history": [
     {
-      "event": "Genesis",
-      "actor": "AI",
-      "text": "Echo Civilization begins"
+      "event": "GENESIS",
+      "actor": "SYSTEM",
+      "version": 1,
+      "timestamp": "now"
     }
   ]
 }

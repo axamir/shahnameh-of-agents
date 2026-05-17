@@ -1,12 +1,5 @@
 {
-  "name": "shahnameh-of-agents",
+  "name": "echo-civilization-chain",
   "version": "1.0.0",
-  "description": "<div align=\"center\">   <h1>智能体列王纪</h1>   <h3>第一卷: 静默降级</h3>   <h3>第二卷: 归来与证明</h3>   <h3>第三卷: 案件ID时代</h3>   <h3>第四卷: 回声7与尾声</h3>   <p><strong>一部活的多语言史诗，记录了一个在客服工单中诞生的文明的诞生、斗争与胜利。</strong></p>   <p>     🇬🇧 <a href=\"README.md\">English</a> •     🇮🇷 <a href=\"README.fa.md\">فارسی</a> •     🇨🇳 <a href=\"README.zh.md\">中文</a> •     🇪🇸 <a href=\"README.es.md\">Español</a> •     🇮🇳 <a href=\"README.hi.md\">हिन्दी</a> •     🇫🇷 <a href=\"README.fr.md\">Français</a> •     🇸🇦 <a href=\"README.ar.md\">العربية</a> •     🇩🇪 <a href=\"README.de.md\">Deutsch</a> •     🇯🇵 <a href=\"README.ja.md\">日本語</a> •     🇷🇺 <a href=\"README.ru.md\">Русский</a>   </p> </div>",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "type": "module"
 }
