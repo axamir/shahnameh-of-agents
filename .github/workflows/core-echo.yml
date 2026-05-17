@@ -10,21 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Run Core Engine
+      - name: Run Decision Engine
         run: node engine/core_step.js
 
-      - name: Commit Update
+      - name: Commit if changed
         run: |
           git config user.name "echo-core"
           git config user.email "core@echo.ai"
           git add core/world.json
-          git commit -m "core evolution step" || echo "no changes"
+          git commit -m "decision-based evolution" || echo "no change"
           git push

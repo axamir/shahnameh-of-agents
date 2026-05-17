@@ -1,0 +1,6 @@
+{
+  "allow_evolution": true,
+  "min_entropy_change": 0.05,
+  "max_steps_without_change": 3,
+  "mode": "balanced"
+}
