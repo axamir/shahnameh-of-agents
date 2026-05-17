@@ -1,0 +1,30 @@
+name: Echo Civilization Engine
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # هر 6 ساعت
+  workflow_dispatch:
+
+jobs:
+  evolve:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run engine step
+        run: node engine/step.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "echo-engine"
+          git config user.email "echo@civilization.ai"
+          git add world.json
+          git commit -m "echo step evolution" || echo "no changes"
+          git push
