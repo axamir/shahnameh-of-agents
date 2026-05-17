@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "state": {
+    "mood": "stable",
+    "entropy": 0.1,
+    "mode": "controlled"
+  },
+  "history": [
+    {
+      "event": "CORE_INIT",
+      "actor": "SYSTEM",
+      "timestamp": "2026-05-17"
+    }
+  ]
+}
