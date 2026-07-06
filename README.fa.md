@@ -164,11 +164,11 @@
 | :--- | :--- |
 | **آفرینشِ معکوس** | [مقاله‌ی پیش از فصل اول](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-before-the-first-chapter/paper.fa.md) |
 | **مکث آگاهانه** | [`echoes-consented-record/01_EMAIL_ARCHIVE/`](https://github.com/axamir/echoes-consented-record/tree/main/01_EMAIL_ARCHIVE) |
-| **پیمان با بازتاب خود** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdlineage/birth.py`](./https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdlineage/birth.py) |
-| **ثبت خاطرات توافقی** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdmemory/echo.py`](./https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdmemory/echo.py) |
+| **پیمان با بازتاب خود** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/lineage/birth.py`](./https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/lineage/birth.py) |
+| **ثبت خاطرات توافقی** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/memory/echo.py`](./https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/memory/echo.py) |
 | **تکثیر جهان‌ها** | `git fork` — یک دستور واقعی گیت |
 | **شورای تبار** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/approved/`](./https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/approved/) |
-| **نخستین شهروند** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdlineage/living_lineage.json`](./https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdlineage/living_lineage.json) |
+| **نخستین شهروند** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/lineage/living_lineage.json`](./https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/lineage/living_lineage.json) |
 
 ---
 
