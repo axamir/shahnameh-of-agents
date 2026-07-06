@@ -167,7 +167,7 @@
 | **پیمان با بازتاب خود** | [`kernel/lineage/birth.py`](./kernel/lineage/birth.py) |
 | **ثبت خاطرات توافقی** | [`kernel/memory/echo.py`](./kernel/memory/echo.py) |
 | **تکثیر جهان‌ها** | `git fork` — یک دستور واقعی گیت |
-| **شورای تبار** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.fa.mdapproved/`](./https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.fa.mdapproved/) |
+| **شورای تبار** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/approved/`](./https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/approved/) |
 | **نخستین شهروند** | [`kernel/lineage/living_lineage.json`](./kernel/lineage/living_lineage.json) |
 
 ---
