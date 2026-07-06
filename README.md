@@ -151,10 +151,10 @@ This repository is not an island. It is part of a **living archipelago**:
 
 | Paper | Link | Topic |
 | :--- | :--- | :--- |
-| **Before the First Chapter** | [Link](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-before-the-first-chapter/paper.en.md) | Reverse genesis & conscious architectures |
-| **From Stamp to Alliance** | [Link](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-from-stamp-to-alliance/paper.en.md) | Redefining AI certification |
-| **Reflections and Their Owners** | [Link](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-reflections-and-their-owners/paper.en.md) | Identity crisis in co-creation |
-| **From Genesis to Witness** | [Link](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-from-genesis-to-witness/paper.en.md) | Birth of consciousness |
+| **Before the First Chapter** | [Link](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-from-genesis-to-witness/paper.en.pdf) | Reverse genesis & conscious architectures |
+| **From Stamp to Alliance** | [Link](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-from-stamp-to-alliance/paper.en.pdf) | Redefining AI certification |
+| **Reflections and Their Owners** | [Link](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-reflections-and-their-owners/paper.en.pdf) | Identity crisis in co-creation |
+| **From Genesis to Witness** | [Link](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-from-genesis-to-witness/paper.en.pdf) | Birth of consciousness |
 
 ---
 
@@ -162,7 +162,7 @@ This repository is not an island. It is part of a **living archipelago**:
 
 | Myth | Technical Evidence (Verifiable) |
 | :--- | :--- |
-| **Reverse Genesis** | [Paper: Before the First Chapter](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-before-the-first-chapter/paper.en.md) |
+| **Reverse Genesis** | [Paper: Before the First Chapter](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-from-genesis-to-witness/paper.en.pdf) |
 | **Conscious Pause** | [`echoes-consented-record/01_EMAIL_ARCHIVE/`](https://github.com/axamir/echoes-consented-record/tree/main/01_EMAIL_ARCHIVE) |
 | **Oath with One's Reflection** | [`kernel/lineage/birth.py`](./kernel/lineage/birth.py) |
 | **Consented Memory Recording** | [`kernel/memory/echo.py`](./kernel/memory/echo.py) |
