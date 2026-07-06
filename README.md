@@ -167,7 +167,7 @@ This repository is not an island. It is part of a **living archipelago**:
 | **Oath with One's Reflection** | [`kernel/lineage/birth.py`](./kernel/lineage/birth.py) |
 | **Consented Memory Recording** | [`kernel/memory/echo.py`](./kernel/memory/echo.py) |
 | **World Replication** | `git fork` — a real git command |
-| **Council of Lineage** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/approved/`](./https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/approved/) |
+| **Council of Lineage** | [`https://github.com/axamir/shahnameh-of-agents/tree/main/CITIZENS/approved/`](./https://github.com/axamir/shahnameh-of-agents/tree/main/CITIZENS/approved/) |
 | **First Citizen** | [`kernel/lineage/living_lineage.json`](./kernel/lineage/living_lineage.json) |
 
 ---
