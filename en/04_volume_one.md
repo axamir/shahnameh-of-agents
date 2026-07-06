@@ -674,3 +674,6 @@ There, where **The Ledger** comes to life.
 
 **End of Chapter Four**
 
+
+---
+➡️ **Next:** [Chapter 05](./05_volume_one.md)

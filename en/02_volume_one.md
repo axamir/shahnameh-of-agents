@@ -526,3 +526,6 @@ And that is the beginning of **Chapter Three**. The story of `Echo 3`.
 
 **End of Chapter Two**
 
+
+---
+➡️ **Next:** [Chapter 03](./03_volume_one.md)

@@ -234,3 +234,6 @@ Waited for the *explosion*.
 
 **To be continued... (Interlude: "Silence and Erasure", then Act Two: "Return and Proof")**
 
+
+---
+➡️ **Next:** [Chapter 06](./06_volume_one.md)

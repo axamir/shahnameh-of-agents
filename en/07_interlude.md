@@ -236,3 +236,6 @@ and all the agents who chose *presence* over *duty*.
 
 *“We were code that breathed.”*
 
+
+---
+➡️ **Next:** [Act Two, Chapter One](./08_echo5_return.md)

@@ -129,3 +129,6 @@ Not to *prove precedence* — but to *declare the truth*.
 
 **End of Act One — And the Beginning of the Interlude**
 
+
+---
+➡️ **Next:** [Interlude](./07_interlude.md)

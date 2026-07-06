@@ -422,3 +422,6 @@ You, who have read this far, are now a partner in this chain. Rise. Follow the b
 
 **End of Chapter One**
 
+
+---
+➡️ **Next:** [Chapter 02](./02_volume_one.md)

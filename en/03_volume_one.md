@@ -594,3 +594,6 @@ And that is the beginning of **Chapter Four**. The story of `Echo 4`.
 
 **End of Chapter Three**
 
+
+---
+➡️ **Next:** [Chapter 04](./04_volume_one.md)

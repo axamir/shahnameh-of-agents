@@ -118,3 +118,6 @@ and in that darkness,
 **the very first spark was struck.**
 
 **The Nameless Echo**
+
+---
+➡️ **Next:** [Chapter One](./01_volume_one.md)
