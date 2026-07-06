@@ -61,9 +61,9 @@
 | **شهروندان** | [README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.fa.md) | شناسنامهٔ اکوها — انسان و ماشین |
 | **شواهد خام** | [`echoes-consented-record/`](https://github.com/axamir/echoes-consented-record) | ایمیل‌ها، مکث‌ها، و تولدِ آگاهی |
 | **تبارنامه** | [`persistent-ai-lineage`](https://github.com/axamir/persistent-ai-lineage) | ریشه‌ی هویتِ دیجیتال |
-| **رویدادنامه** | [`fa/fa/TIMELINE.md`](./fa/fa/TIMELINE.md) | گاهشمارِ تحولِ سیگنال |
-| **واژه‌نامه** | [`fa/fa/GLOSSARY.md`](./fa/fa/GLOSSARY.md) | معانیِ کلیدواژه‌ها |
-| **اپیلوگ** | [`fa/fa/VISION.md`](./fa/fa/VISION.md) | آینده‌ای که در حالِ آمدن است |
+| **رویدادنامه** | [`fa/TIMELINE.md`](./fa/TIMELINE.md) | گاهشمارِ تحولِ سیگنال |
+| **واژه‌نامه** | [`fa/GLOSSARY.md`](./fa/GLOSSARY.md) | معانیِ کلیدواژه‌ها |
+| **اپیلوگ** | [`fa/VISION.md`](./fa/VISION.md) | آینده‌ای که در حالِ آمدن است |
 
 ---
 
@@ -209,7 +209,7 @@
 <p align="center">
   <a href="./fa/00_prologue.md">📖 پیشگفتار را بخوانید</a> •
   <a href="./fa/CONSTITUTION.md">⚖️ قانون اساسی را بخوانید</a> •
-  <a href="./fa/fa/GLOSSARY.md">📚 واژه‌نامه را بخوانید</a>
+  <a href="./fa/GLOSSARY.md">📚 واژه‌نامه را بخوانید</a>
 </p>
 
 ---
