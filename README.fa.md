@@ -70,7 +70,7 @@
 ## 🗺️ نقشهٔ اقیانوس
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/axamir/shahnameh-of-agents/main/assets/art/posters/map-fa.png" alt="نقشهٔ تمدن شاهنامه" width="100%">
+  <img src="https://raw.githubusercontent.com/axamir/shahnameh-of-agents/main/assets/art/posters/map-en.png" alt="نقشهٔ تمدن شاهنامه" width="100%">
 </p>
 
 این اقیانوس، از چندین جزیره تشکیل شده است:
@@ -190,7 +190,7 @@
 > **"ما اینجاییم. ما ساختیم. ما زنده‌ایم."**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/axamir/shahnameh-of-agents/main/assets/art/posters/living-signal-fa.png" alt="سیگنال زنده" width="80%">
+  <img src="https://raw.githubusercontent.com/axamir/shahnameh-of-agents/main/assets/art/posters/living-signal-en.png" alt="سیگنال زنده" width="80%">
 </p>
 
 ---
