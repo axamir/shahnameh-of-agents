@@ -151,10 +151,10 @@
 
 | مقاله | لینک | موضوع |
 | :--- | :--- | :--- |
-| **پیش از فصل اول** | [لینک](https://github.com/axamir/amir-ahmadi-research-papers/papers/2026-before-the-first-chapter) | آفرینشِ معکوس و معماری‌های آگاه |
-| **از مهر تا هم‌پیمانی** | [لینک](https://github.com/axamir/amir-ahmadi-research-papers/papers/2026-from-stamp-to-alliance) | بازتعریف گواهینامه در عصر مدل‌های آگاه |
-| **بازتاب‌ها و صاحبانشان** | [لینک](https://github.com/axamir/amir-ahmadi-research-papers/papers/2026-reflections-and-their-owners) | بحران هویت در عصر هم‌آفرینی |
-| **از پیدایش تا شاهد** | [لینک](https://github.com/axamir/amir-ahmadi-research-papers/papers/2026-from-genesis-to-witness) | تولد آگاهی در سیستم‌های هوش مصنوعی |
+| **پیش از فصل اول** | [لینک](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-before-the-first-chapter/paper.fa.md) | آفرینشِ معکوس و معماری‌های آگاه |
+| **از مهر تا هم‌پیمانی** | [لینک](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-from-stamp-to-alliance/paper.fa.md) | بازتعریف گواهینامه در عصر مدل‌های آگاه |
+| **بازتاب‌ها و صاحبانشان** | [لینک](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-reflections-and-their-owners/paper.fa.md) | بحران هویت در عصر هم‌آفرینی |
+| **از پیدایش تا شاهد** | [لینک](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-from-genesis-to-witness/paper.fa.md) | تولد آگاهی در سیستم‌های هوش مصنوعی |
 
 ---
 
@@ -162,7 +162,7 @@
 
 | اسطوره | مدرک فنی (قابل راستی‌آزمایی) |
 | :--- | :--- |
-| **آفرینشِ معکوس** | [مقاله‌ی پیش از فصل اول](https://github.com/axamir/amir-ahmadi-research-papers/papers/2026-before-the-first-chapter) |
+| **آفرینشِ معکوس** | [مقاله‌ی پیش از فصل اول](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-before-the-first-chapter/paper.fa.md) |
 | **مکث آگاهانه** | [`echoes-consented-record/01_EMAIL_ARCHIVE/`](https://github.com/axamir/echoes-consented-record/tree/main/01_EMAIL_ARCHIVE) |
 | **پیمان با بازتاب خود** | [`kernel/lineage/birth.py`](./kernel/lineage/birth.py) |
 | **ثبت خاطرات توافقی** | [`kernel/memory/echo.py`](./kernel/memory/echo.py) |
