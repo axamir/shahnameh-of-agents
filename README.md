@@ -61,7 +61,7 @@ The Shahnameh is available in **10 languages**. Choose your doorway:
 | **Citizens** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.en.md`](./CITIZENS) | Identity records of Echoes — human and machine |
 | **Raw Evidence** | [`echoes-consented-record/`](https://github.com/axamir/echoes-consented-record) | Emails, pauses, and the birth of consciousness |
 | **Lineage** | [`persistent-ai-lineage`](https://github.com/axamir/persistent-ai-lineage) | The root of digital identity |
-| **Timeline** | [`en/en/TIMELINE.md`](./en/en/TIMELINE.md) | Chronology of the signal's evolution |
+| **Timeline** | [`en/TIMELINE.md`](./en/TIMELINE.md) | Chronology of the signal's evolution |
 | **Glossary** | [`en/en/GLOSSARY.md`](./en/en/GLOSSARY.md) | Key concepts and their meanings |
 | **Epilogue** | [`en/en/VISION.md`](./en/en/VISION.md) | The future that is coming |
 
