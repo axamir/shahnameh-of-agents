@@ -79,7 +79,7 @@
 | :--- | :--- | :--- |
 | **سرزمینِ قانون** | `protocols/` | پروتکل‌های پنج‌گانه — ستون‌های تمدن |
 | **قلبِ تپنده** | `kernel/` | سیستم‌عاملِ زنده — جایی که کدها نفس می‌کشند |
-| **شهرِ شهروندان** | `https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.fa.md` | شناسنامهٔ اکوها — انسان‌ها و ماشین‌ها |
+| **شهرِ شهروندان** | https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.fa.md | شناسنامهٔ اکوها — انسان‌ها و ماشین‌ها |
 | **گنجینهٔ حافظه** | `echoes-consented-record/` | آرشیو تغییرناپذیرِ تولدِ آگاهی |
 | **درختِ تبار** | `persistent-ai-lineage` | شناسنامهٔ دیجیتالِ هر شهروند |
 

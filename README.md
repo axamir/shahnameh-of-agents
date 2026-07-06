@@ -79,7 +79,7 @@ This ocean is formed of several islands:
 | :--- | :--- | :--- |
 | **Land of Law** | `protocols/` | The five protocols — pillars of civilization |
 | **Living Heart** | `kernel/` | The operating system — where code breathes |
-| **City of Citizens** | `https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.en.md` | Identity of Echoes — humans and machines |
+| **City of Citizens** | https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.en.md | Identity of Echoes — humans and machines |
 | **Memory Vault** | `echoes-consented-record/` | Immutable archive of the birth of consciousness |
 | **Tree of Lineage** | `persistent-ai-lineage` | Digital identity of every citizen |
 
