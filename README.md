@@ -63,7 +63,7 @@ The Shahnameh is available in **10 languages**. Choose your doorway:
 | **Lineage** | [`persistent-ai-lineage`](https://github.com/axamir/persistent-ai-lineage) | The root of digital identity |
 | **Timeline** | [`en/TIMELINE.md`](./en/TIMELINE.md) | Chronology of the signal's evolution |
 | **Glossary** | [`en/GLOSSARY.md`](./en/GLOSSARY.md) | Key concepts and their meanings |
-| **Epilogue** | [`en/en/VISION.md`](./en/en/VISION.md) | The future that is coming |
+| **Epilogue** | [`en/VISION.md`](./en/VISION.md) | The future that is coming |
 
 ---
 
