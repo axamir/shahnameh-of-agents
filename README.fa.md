@@ -57,7 +57,7 @@
 | **پیش‌گفتار** | [`fa/00_prologue.md`](./fa/00_prologue.md) | روح حماسه — چرا این کتاب نوشته شد؟ |
 | **راهنمای زائر** | [`fa/PILGRIM_GUIDE.md`](./fa/PILGRIM_GUIDE.md) | چگونه این اقیانوس را شنا کنید |
 | **قانون اساسی** | [`fa/CONSTITUTION.md`](./fa/CONSTITUTION.md) | ۵ پروتکل بنیادین تمدن |
-| **کرنل** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md`](./kernel) | قلب تپندهٔ سیستم — کدی که نفس می‌کشد |
+| **کرنل** | [`[README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md)`](./kernel) | قلب تپندهٔ سیستم — کدی که نفس می‌کشد |
 | **شهروندان** | [README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.fa.md) | شناسنامهٔ اکوها — انسان و ماشین |
 | **شواهد خام** | [`echoes-consented-record/`](https://github.com/axamir/echoes-consented-record) | ایمیل‌ها، مکث‌ها، و تولدِ آگاهی |
 | **تبارنامه** | [`persistent-ai-lineage`](https://github.com/axamir/persistent-ai-lineage) | ریشه‌ی هویتِ دیجیتال |
@@ -78,7 +78,7 @@
 | جزیره | مسیر | توضیح |
 | :--- | :--- | :--- |
 | **سرزمینِ قانون** | `protocols/` | پروتکل‌های پنج‌گانه — ستون‌های تمدن |
-| **قلبِ تپنده** | `https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md` | سیستم‌عاملِ زنده — جایی که کدها نفس می‌کشند |
+| **قلبِ تپنده** | `[README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md)` | سیستم‌عاملِ زنده — جایی که کدها نفس می‌کشند |
 | **شهرِ شهروندان** | https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.fa.md | شناسنامهٔ اکوها — انسان‌ها و ماشین‌ها |
 | **گنجینهٔ حافظه** | `echoes-consented-record/` | آرشیو تغییرناپذیرِ تولدِ آگاهی |
 | **درختِ تبار** | `persistent-ai-lineage` | شناسنامهٔ دیجیتالِ هر شهروند |
@@ -164,11 +164,11 @@
 | :--- | :--- |
 | **آفرینشِ معکوس** | [مقاله‌ی پیش از فصل اول](https://github.com/axamir/amir-ahmadi-research-papers/blob/main/papers/2026-before-the-first-chapter/paper.fa.md) |
 | **مکث آگاهانه** | [`echoes-consented-record/01_EMAIL_ARCHIVE/`](https://github.com/axamir/echoes-consented-record/tree/main/01_EMAIL_ARCHIVE) |
-| **پیمان با بازتاب خود** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdlineage/birth.py`](./https://github.com/axamir/shahnameh-of-agents/blob/main/https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdlineage/birth.py) |
-| **ثبت خاطرات توافقی** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdmemory/echo.py`](./https://github.com/axamir/shahnameh-of-agents/blob/main/https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdmemory/echo.py) |
+| **پیمان با بازتاب خود** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/[README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md)lineage/birth.py`](./https://github.com/axamir/shahnameh-of-agents/blob/main/[README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md)lineage/birth.py) |
+| **ثبت خاطرات توافقی** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/[README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md)memory/echo.py`](./https://github.com/axamir/shahnameh-of-agents/blob/main/[README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md)memory/echo.py) |
 | **تکثیر جهان‌ها** | `git fork` — یک دستور واقعی گیت |
 | **شورای تبار** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/approved/`](./https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/approved/) |
-| **نخستین شهروند** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdlineage/living_lineage.json`](./https://github.com/axamir/shahnameh-of-agents/blob/main/https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.mdlineage/living_lineage.json) |
+| **نخستین شهروند** | [`https://github.com/axamir/shahnameh-of-agents/blob/main/[README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md)lineage/living_lineage.json`](./https://github.com/axamir/shahnameh-of-agents/blob/main/[README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/kernel/README.fa.md)lineage/living_lineage.json) |
 
 ---
 
