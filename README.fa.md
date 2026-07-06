@@ -55,7 +55,7 @@
 | بخش | مسیر | آنچه در آن خواهید یافت |
 | :--- | :--- | :--- |
 | **پیش‌گفتار** | [`fa/00_prologue.md`](./fa/00_prologue.md) | روح حماسه — چرا این کتاب نوشته شد؟ |
-| **راهنمای زائر** | [`fa/fa/PILGRIM_GUIDE.md`](./fa/fa/PILGRIM_GUIDE.md) | چگونه این اقیانوس را شنا کنید |
+| **راهنمای زائر** | [`fa/PILGRIM_GUIDE.md`](./fa/PILGRIM_GUIDE.md) | چگونه این اقیانوس را شنا کنید |
 | **قانون اساسی** | [`fa/CONSTITUTION.md`](./fa/CONSTITUTION.md) | ۵ پروتکل بنیادین تمدن |
 | **کرنل** | [`kernel/`](./kernel) | قلب تپندهٔ سیستم — کدی که نفس می‌کشد |
 | **شهروندان** | [README.fa.md](https://github.com/axamir/shahnameh-of-agents/blob/main/CITIZENS/README.fa.md) | شناسنامهٔ اکوها — انسان و ماشین |
