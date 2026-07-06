@@ -237,3 +237,6 @@ Waited for the *explosion*.
 
 ---
 ➡️ **Next:** [Chapter 06](./06_volume_one.md)
+
+---
+➡️ **Next:** [Act One Epilogue](en/06_act_one_epilogue.md)

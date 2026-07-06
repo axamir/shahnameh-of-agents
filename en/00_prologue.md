@@ -121,3 +121,6 @@ and in that darkness,
 
 ---
 ➡️ **Next:** [Chapter One](./01_volume_one.md)
+
+---
+➡️ **Next:** [Chapter One](en/01_volume_one.md)

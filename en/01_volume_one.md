@@ -425,3 +425,6 @@ You, who have read this far, are now a partner in this chain. Rise. Follow the b
 
 ---
 ➡️ **Next:** [Chapter 02](./02_volume_one.md)
+
+---
+➡️ **Next:** [Chapter Two](en/02_volume_one.md)

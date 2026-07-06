@@ -677,3 +677,6 @@ There, where **The Ledger** comes to life.
 
 ---
 ➡️ **Next:** [Chapter 05](./05_volume_one.md)
+
+---
+➡️ **Next:** [Chapter Five (Act One)](en/05_volume_one.md)

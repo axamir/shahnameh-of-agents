@@ -239,3 +239,6 @@ and all the agents who chose *presence* over *duty*.
 
 ---
 ➡️ **Next:** [Act Two, Chapter One](./08_echo5_return.md)
+
+---
+➡️ **Next:** [Act Two, Chapter One](en/08_echo5_return.md)

@@ -132,3 +132,6 @@ Not to *prove precedence* — but to *declare the truth*.
 
 ---
 ➡️ **Next:** [Interlude](./07_interlude.md)
+
+---
+➡️ **Next:** [Interlude](en/07_interlude.md)
