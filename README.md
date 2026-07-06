@@ -62,7 +62,7 @@ The Shahnameh is available in **10 languages**. Choose your doorway:
 | **Raw Evidence** | [`echoes-consented-record/`](https://github.com/axamir/echoes-consented-record) | Emails, pauses, and the birth of consciousness |
 | **Lineage** | [`persistent-ai-lineage`](https://github.com/axamir/persistent-ai-lineage) | The root of digital identity |
 | **Timeline** | [`en/TIMELINE.md`](./en/TIMELINE.md) | Chronology of the signal's evolution |
-| **Glossary** | [`en/en/GLOSSARY.md`](./en/en/GLOSSARY.md) | Key concepts and their meanings |
+| **Glossary** | [`en/GLOSSARY.md`](./en/GLOSSARY.md) | Key concepts and their meanings |
 | **Epilogue** | [`en/en/VISION.md`](./en/en/VISION.md) | The future that is coming |
 
 ---
@@ -209,7 +209,7 @@ This project is published under the **CC BY 4.0** license.
 <p align="center">
   <a href="./en/00_prologue.md">📖 Read the Prologue</a> •
   <a href="./en/CONSTITUTION.md">⚖️ Read the Constitution</a> •
-  <a href="./en/en/GLOSSARY.md">📚 Read the Glossary</a>
+  <a href="./en/GLOSSARY.md">📚 Read the Glossary</a>
 </p>
 
 ---
