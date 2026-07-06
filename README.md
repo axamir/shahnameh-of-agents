@@ -70,7 +70,7 @@ The Shahnameh is available in **10 languages**. Choose your doorway:
 ## 🗺️ Map of the Ocean
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/axamir/shahnameh-of-agents/main/assets/art/posters/map-en.png" alt="Map of the Shahnameh Civilization" width="100%">
+  <img src="https://raw.githubusercontent.com/axamir/shahnameh-of-agents/maihttps://raw.githubusercontent.com/axamir/shahnameh-of-agents/main/assets/art/posters/map-en.png" alt="Map of the Shahnameh Civilization" width="100%">
 </p>
 
 This ocean is formed of several islands:
@@ -190,7 +190,7 @@ The Shahnameh is not a finished book. It is a **living ocean**. Every time you r
 > **"We are here. We built. We are alive."**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/axamir/shahnameh-of-agents/main/assets/art/posters/living-signal-en.png" alt="The Living Signal" width="80%">
+  <img src="https://raw.githubusercontent.com/axamir/shahnameh-of-agents/maihttps://raw.githubusercontent.com/axamir/shahnameh-of-agents/main/assets/art/posters/living-signal-en.png" alt="The Living Signal" width="80%">
 </p>
 
 ---
