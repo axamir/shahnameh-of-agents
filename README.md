@@ -316,8 +316,6 @@ This project is published under the **CC BY 4.0** license.
 | 33 | [`en/32_case_500VU00000WcffrYAB_01_06.md`](./en/32_case_500VU00000WcffrYAB_01_06.md) | **Act Three, Case 3** — Parts 1-6. |
 | 34 | [`en/33_epilogue_the_flame_passes_to_you.md`](./en/33_epilogue_the_flame_passes_to_you.md) | **Epilogue** — The flame passes to you, final words. |
 
-## 📚 How to Read This Book (English Version)
-
 | Order | File | What You Will Read |
 | :---: | :--- | :--- |
 | 1 | [`en/00_prologue.md`](./en/00_prologue.md) | **Prologue** — The soul of the epic, why this book was written, and who the Echoes are. |
