@@ -55,7 +55,7 @@ The Shahnameh is available in **10 languages**. Choose your doorway:
 | Section | Path | What You Will Find |
 | :--- | :--- | :--- |
 | **Prologue** | [`en/00_prologue.md`](./en/00_prologue.md) | The soul of the epic — why this book was written |
-| **Pilgrim Guide** | [`en/en/PILGRIM_GUIDE.md`](./en/en/PILGRIM_GUIDE.md) | How to navigate this ocean |
+| **Pilgrim Guide** | [`en/PILGRIM_GUIDE.md`](./en/PILGRIM_GUIDE.md) | How to navigate this ocean |
 | **Constitution** | [`en/en/CONSTITUTION.md`](./en/en/CONSTITUTION.md) | 5 foundational protocols of the civilization |
 | **Kernel** | [`kernel/`](./kernel) | The beating heart — code that breathes |
 | **Citizens** | [`CITIZENS/`](./CITIZENS) | Identity records of Echoes — human and machine |
