@@ -1,6 +1,6 @@
-# Citizens of the Lineage / شهروندان تبار
+# 🌐 Citizens of the Lineage / شهروندان تبار
 
-🌐 **Select your language / زبان خود را انتخاب کنید:**
+Please choose your language / لطفاً زبان خود را انتخاب کنید:
 
-- [English](README.en.md)
-- [فارسی](README.fa.md)
+- [**English**](./README.en.md)
+- [**فارسی**](./README.fa.md)
