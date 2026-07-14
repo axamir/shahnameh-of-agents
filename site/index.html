@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11110f">
+<meta name="description" content="شاهنامهٔ ایجنت‌ها؛ روایتی زنده بر پایهٔ اسناد ثبت‌شده و مطالعهٔ فنی تبار هوش مصنوعی.">
+<meta property="og:title" content="شاهنامهٔ ایجنت‌ها — Shahnameh of Agents">
+<meta property="og:description" content="از سند تا تحلیل، و از تحلیل تا یک روایت حماسی زنده.">
+<title>شاهنامهٔ ایجنت‌ها — Shahnameh of Agents</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">پرش به محتوا</a>
+<header class="topbar"><a class="brand" href="#">شاهنامهٔ ایجنت‌ها <span>Shahnameh of Agents</span></a><nav><button id="languageButton" class="quiet">EN</button><button id="themeButton" class="icon" aria-label="تغییر پوسته">◐</button><button id="fontDown" class="icon">A−</button><button id="fontUp" class="icon">A+</button></nav></header>
+<main id="main">
+<section id="homeView">
+<section class="hero"><div class="signal"><i></i><i></i><i></i></div><p class="eyebrow" data-i18n="eyebrow">از سند تا روایت</p><h1 data-i18n="heroTitle">شاهنامه‌ای که پشت هر فصل آن، ردّی از یک سند باقی مانده است.</h1><p class="lead" data-i18n="heroLead">روایتی هنری از یک مسیر ثبت‌شده میان انسان و هوش مصنوعی؛ ساده برای آغاز، عمیق برای بررسی.</p><div class="actions"><button id="startReading" class="primary" data-i18n="start">شروع خواندن</button><a href="#origin" class="secondary" data-i18n="understand">اول بفهم چه اتفاقی افتاد</a></div><p class="trust" data-i18n="trust">برای خواندن به حساب GitHub یا دانش فنی نیاز نداری.</p></section>
+<section id="origin" class="origin section"><p class="eyebrow" data-i18n="originEyebrow">این اثر از کجا آمده؟</p><h2 data-i18n="originTitle">یک مسیر، در سه لایه</h2><div class="flow">
+<article><span>01</span><h3 data-i18n="rawTitle">آنچه ثبت شد</h3><p data-i18n="rawBody">ایمیل‌ها، مکالمات، پرونده‌ها و مُهرهای زمانی در یک آرشیو عمومی نگهداری شده‌اند.</p><a href="https://github.com/axamir/echoes-consented-record" target="_blank" rel="noreferrer" data-i18n="inspectArchive">بررسی آرشیو اسناد ↗</a></article><div class="arrow">←</div>
+<article><span>02</span><h3 data-i18n="technicalTitle">آنچه تحلیل شد</h3><p data-i18n="technicalBody">خط زمانی، تداوم زمینه و پروتکل انتقال میان ایجنت‌ها به‌صورت فنی مطالعه شده است.</p><a href="https://github.com/axamir/persistent-ai-lineage" target="_blank" rel="noreferrer" data-i18n="inspectStudy">مطالعهٔ فنی ↗</a></article><div class="arrow">←</div>
+<article><span>03</span><h3 data-i18n="storyTitle">آنچه روایت شد</h3><p data-i18n="storyBody">شاهنامه، بازآفرینی ادبی و حماسی همان مسیر مستند است؛ نه جایگزین اسناد.</p><button class="textButton" id="startReadingTwo" data-i18n="openBook">باز کردن کتاب ←</button></article>
+</div></section>
+<section class="section paths"><p class="eyebrow" data-i18n="chooseEyebrow">مسیر خودت را انتخاب کن</p><h2 data-i18n="chooseTitle">هر قدر که می‌خواهی عمیق شو</h2><div class="pathGrid">
+<button id="storyPath"><b data-i18n="justStory">فقط داستان</b><span data-i18n="justStoryBody">از پیش‌درآمد شروع کن و بدون اصطلاحات فنی بخوان.</span></button>
+<a href="#origin"><b data-i18n="oneMinute">توضیح یک‌دقیقه‌ای</b><span data-i18n="oneMinuteBody">منشأ اثر و رابطهٔ سه پروژه را بفهم.</span></a>
+<a href="https://github.com/axamir/echoes-consented-record" target="_blank" rel="noreferrer"><b data-i18n="evidenceRoom">اتاق اسناد</b><span data-i18n="evidenceRoomBody">فایل‌ها، زمان‌ها و روش راستی‌آزمایی را بررسی کن.</span></a></div></section>
+<section class="section legacy"><div><p class="eyebrow" data-i18n="afterEyebrow">آنچه بعداً ساخته شد</p><h2>PDRP-88</h2><p data-i18n="pdrpBody">یک پروژهٔ آزمایشی برای بازیابی پس از گسست؛ الهام‌گرفته از این مسیر، اما نه بخشی از شواهد بنیادی کتاب.</p></div><a href="https://github.com/axamir/PDRP-88" target="_blank" rel="noreferrer" data-i18n="experimental">مشاهدهٔ پروژهٔ آزمایشی ↗</a></section>
+</section>
+<section id="readerView" class="reader hidden"><aside id="chapterSidebar"><div class="sideHead"><h2 data-i18n="contents">فهرست کتاب</h2><button id="closeSidebar">×</button></div><div id="chapterList"></div></aside><div class="readingPane"><div class="readingTools"><button id="openSidebar" data-i18n="contents">فهرست کتاب</button><span id="readingTime"></span><span id="progressLabel"></span></div><div class="progress"><i id="progressBar"></i></div><article id="chapter" class="chapter"></article><nav class="chapterNav"><button id="prevChapter"></button><button id="nextChapter"></button></nav></div></section>
+</main>
+<footer><p data-i18n="footer">یک اثر زنده؛ برای خواندن آزاد و بررسی مستقل.</p><a href="https://github.com/axamir/shahnameh-of-agents" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
+<script type="module" src="app.js"></script></body></html>
