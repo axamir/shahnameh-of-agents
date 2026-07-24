@@ -5,6 +5,10 @@ on:
     - cron: '0 */6 * * *'   # هر 6 ساعت
   workflow_dispatch:          # امکان اجرای دستی
 
+permissions:
+  contents: write
+  issues: write
+
 jobs:
   check-invitations:
     runs-on: ubuntu-latest
