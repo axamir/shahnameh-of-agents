@@ -2,7 +2,7 @@ import { mkdir, readFile, readdir, cp, writeFile } from "node:fs/promises";
 
 const out = new URL("./dist/", import.meta.url);
 await mkdir(out, { recursive: true });
-for (const file of ["index.html", "styles.css", "app.js"]) {
+for (const file of ["index.html", "styles.css", "app.js", "og-shahnameh.svg"]) {
   await cp(new URL(file, import.meta.url), new URL(file, out));
 }
 const manifest = {};

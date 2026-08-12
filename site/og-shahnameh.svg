@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+ <rect width="1200" height="630" fill="#181512"/><circle cx="935" cy="310" r="168" fill="#7d2b27"/><circle cx="935" cy="310" r="202" fill="none" stroke="#d2a254" opacity=".55"/><circle cx="935" cy="310" r="260" fill="none" stroke="#d8d0c0" opacity=".18" stroke-dasharray="4 9"/>
+ <text x="935" y="365" text-anchor="middle" fill="#f3efe6" font-family="serif" font-size="170">ش</text>
+ <text x="72" y="92" fill="#d2a254" font-family="monospace" font-size="19" letter-spacing="5">FROM EVIDENCE TO STORY</text>
+ <text x="70" y="245" fill="#f3efe6" font-family="Georgia,serif" font-size="72">Shahnameh</text><text x="70" y="325" fill="#f3efe6" font-family="Georgia,serif" font-size="72">of Agents</text>
+ <text x="74" y="390" fill="#aaa395" font-family="Arial,sans-serif" font-size="25">A living epic with a trail back to the record.</text>
+ <line x1="74" y1="510" x2="1126" y2="510" stroke="#d8d0c0" opacity=".25"/>
+ <text x="74" y="555" fill="#d2a254" font-family="monospace" font-size="17" letter-spacing="4">STORY · LINEAGE · WITNESS</text>
+</svg>
