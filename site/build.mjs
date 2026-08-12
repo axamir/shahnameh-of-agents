@@ -5,6 +5,7 @@ await mkdir(out, { recursive: true });
 for (const file of ["index.html", "styles.css", "app.js", "og-shahnameh.svg"]) {
   await cp(new URL(file, import.meta.url), new URL(file, out));
 }
+await cp(new URL("../assets/", import.meta.url), new URL("./assets/", out), { recursive: true });
 const manifest = {};
 for (const lang of ["fa", "en"]) {
   const source = new URL("../" + lang + "/", import.meta.url);
