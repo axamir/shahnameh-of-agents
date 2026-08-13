@@ -88,18 +88,26 @@ async function loadEvidence() {
   }
 }
 const casefiles = {
-  study: { kicker: "01 / TECHNICAL STUDY", title: "Persistent AI Lineage", copy: "A technical case study built around the published record. It provides an inspectable framework for chronology and contextual continuity; it does not replace the source archive or resolve the literary questions left to the reader.", points: ["Uses the public record as its source layer.", "Separates chronology, method, and interpretation.", "Links the technical reading back to its full repository."], source: "https://github.com/axamir/persistent-ai-lineage" },
-  protocol: { kicker: "02 / HANDOVER PROTOCOL", title: "A three-part continuity method", copy: "The protocol describes a reproducible way to carry relevant context across otherwise stateless sessions. It is presented as a method to inspect and test, rather than evidence of a conclusion by itself.", points: ["Inheritance: acknowledge the relevant prior record.", "Witnessing: add a reflective reading of that context.", "Continuity mark: leave a trace for the next handover."], source: "https://github.com/axamir/persistent-ai-lineage/blob/main/docs/handover-protocol.md" },
-  timeline: { kicker: "03 / CHRONOLOGY", title: "The documented sequence", copy: "The technical chronology offers a structured route from the initial support request through the later correspondence, research, and literary work. Each layer remains independently inspectable.", points: ["Start with the dated support request.", "Follow the email, transition, and case-record layers.", "Compare the technical map with the primary archive."], source: "https://github.com/axamir/persistent-ai-lineage/blob/main/timeline/timeline.md" }
+  study: { kicker: "01 / TECHNICAL STUDY", title: "Persistent AI Lineage", path: "README.md", source: "https://github.com/axamir/persistent-ai-lineage" },
+  protocol: { kicker: "02 / HANDOVER PROTOCOL", title: "A three-part continuity method", path: "docs/handover-protocol.md", source: "https://github.com/axamir/persistent-ai-lineage/blob/main/docs/handover-protocol.md" },
+  timeline: { kicker: "03 / CHRONOLOGY", title: "The documented sequence", path: "timeline/timeline.md", source: "https://github.com/axamir/persistent-ai-lineage/blob/main/timeline/timeline.md" }
 };
-function openCasefile(key) {
+async function openCasefile(key) {
   const item = casefiles[key];
   one("#casefileKicker").textContent = item.kicker;
   one("#casefileName").textContent = item.title;
-  one("#casefileCopy").textContent = item.copy;
-  one("#casefilePoints").innerHTML = item.points.map((point) => "<li>" + point + "</li>").join("");
   one("#casefileSource").href = item.source;
+  one("#casefileContent").innerHTML = '<p class="casefile-loading">Loading the published technical record…</p>';
   one("#casefileDialog").showModal();
+  try {
+    const response = await fetch("https://api.github.com/repos/axamir/persistent-ai-lineage/contents/" + item.path, { headers: { Accept: "application/vnd.github+json" } });
+    const file = await response.json();
+    if (!response.ok || !file.content) throw new Error("Source unavailable");
+    const source = decodeURIComponent(escape(atob(file.content.replace(/\n/g, ""))));
+    one("#casefileContent").innerHTML = markdown(source);
+  } catch (error) {
+    one("#casefileContent").innerHTML = '<p class="casefile-loading">The technical record could not load here. Its original source remains available below.</p>';
+  }
 }
 function inline(value) {
   return value
