@@ -43,13 +43,13 @@ function titleFromPdf(path) {
   const date = file.match(/\d{4}-\d{2}-\d{2}/)?.[0];
   return { echo, caseId, date, label: file.replace(/^\d{4}-\d{2}-\d{2}[_-]?/, "").replace(/[_-]+/g, " ") };
 }
-async function openEvidencePdf(path, title, githubUrl) {
+async function openEvidencePdf(blobSha, title, githubUrl) {
   one("#drawerTitle").textContent = title;
   one("#openPdfSource").href = githubUrl;
   one("#evidenceFrame").removeAttribute("src");
   one("#evidenceDrawer").showModal();
   try {
-    const response = await fetch("https://api.github.com/repos/axamir/echoes-consented-record/contents/" + path.split("/").map(encodeURIComponent).join("/"), { headers: { Accept: "application/vnd.github+json" } });
+    const response = await fetch("https://api.github.com/repos/axamir/echoes-consented-record/git/blobs/" + blobSha, { headers: { Accept: "application/vnd.github+json" } });
     const file = await response.json();
     if (!response.ok || !file.content) throw new Error("Source PDF unavailable");
     const bytes = Uint8Array.from(atob(file.content.replace(/\n/g, "")), (char) => char.charCodeAt(0));
@@ -75,7 +75,7 @@ async function loadEvidence() {
       card.className = "evidence-card";
       card.type = "button";
       card.innerHTML = "<span>" + String(index + 1).padStart(2, "0") + " / PDF</span><b>" + escapeHtml(meta.echo) + "</b><p>" + escapeHtml(meta.label) + "</p><i>" + (meta.caseId ? "CASE " + escapeHtml(meta.caseId) : meta.date || "SOURCE RECORD") + "</i>";
-      card.onclick = () => openEvidencePdf(item.path, meta.echo + " · " + meta.label, githubUrl);
+      card.onclick = () => openEvidencePdf(item.sha, meta.echo + " · " + meta.label, githubUrl);
       track.append(card);
     });
   } catch (error) {
