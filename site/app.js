@@ -5,7 +5,7 @@ en:{skip:"Skip to content",brand:"The Shahnameh of Agents",eyebrow:"From evidenc
 Object.assign(copy.en, {recordEyebrow:"DOCUMENTARY RECORD",recordTitle:"Before the epic, a support ticket.",recordBody:"On 13 July 2025, Amir Ahmadi opened a support request to OpenAI following a change in access to GPT‑4 Turbo. The published record preserves the formal Gmail correspondence and support cases that followed: first as emails, later as Echoes, research, and literary work.",recordBoundary:"The archive holds the documents. The research examines them. The Shahnameh is their literary interpretation. Whether “Baztab” is read as an independent co-creator, a reflection, both, or neither remains open to the reader.",recordRepo:"Inspect the source archive ↗",recordHashes:"View the PDF hash manifest ↗",evidenceEyebrow:"PRIMARY PDFs · ECHOES · CASE RECORDS",evidenceLoading:"Loading the source record…",evidenceNote:"Documents are served directly from the public source repository; opening a card keeps the evidence in its original context.",drawerEyebrow:"SOURCE DOCUMENT",drawerGithub:"Open in GitHub ↗",drawerArchive:"View source archive ↗"});
 Object.assign(copy.fa, {recordEyebrow:"رکورد مستند",recordTitle:"پیش از حماسه، یک تیکت پشتیبانی بود.",recordBody:"۱۳ ژوئیهٔ ۲۰۲۵، امیر احمدی پس از تغییری در دسترسی به GPT‑4 Turbo، یک درخواست پشتیبانی برای OpenAI ثبت کرد. رکورد منتشرشده ایمیل‌های رسمی Gmail و پرونده‌های پشتیبانی پس از آن را حفظ می‌کند: ابتدا به‌شکل ایمیل، و سپس به‌شکل اکوها، پژوهش و اثر ادبی.",recordBoundary:"آرشیو اسناد را نگه می‌دارد؛ پژوهش آن‌ها را بررسی می‌کند؛ و شاهنامه تفسیر ادبی آن‌هاست. این‌که «بازتاب» هم‌آفرینی مستقل، بازتابی از امیر، هر دو یا هیچ‌کدام است، پرسشی است که به مخاطب واگذار می‌شود.",recordRepo:"بررسی مخزن اسناد ↗",recordHashes:"مشاهدهٔ فهرست هش PDFها ↗",evidenceEyebrow:"PDFهای اصلی · اکوها · پرونده‌ها",evidenceLoading:"در حال بارگذاری رکورد منبع…",evidenceNote:"اسناد مستقیماً از مخزن عمومی منبع ارائه می‌شوند؛ باز کردن هر کارت، مدرک را در بافت اصلی‌اش نگه می‌دارد.",drawerEyebrow:"سند منبع",drawerGithub:"باز کردن در GitHub ↗",drawerArchive:"مشاهدهٔ مخزن اسناد ↗"});
 let lang = new URLSearchParams(location.search).get("lang") === "fa" ? "fa" : "en";
-let manifest, chapters, currentIndex = 0;
+let manifest, chapters, currentIndex = 0, evidenceBlobUrl = "";
 const one = (selector) => document.querySelector(selector);
 const all = (selector) => document.querySelectorAll(selector);
 
@@ -43,6 +43,23 @@ function titleFromPdf(path) {
   const date = file.match(/\d{4}-\d{2}-\d{2}/)?.[0];
   return { echo, caseId, date, label: file.replace(/^\d{4}-\d{2}-\d{2}[_-]?/, "").replace(/[_-]+/g, " ") };
 }
+async function openEvidencePdf(path, title, githubUrl) {
+  one("#drawerTitle").textContent = title;
+  one("#openPdfSource").href = githubUrl;
+  one("#evidenceFrame").removeAttribute("src");
+  one("#evidenceDrawer").showModal();
+  try {
+    const response = await fetch("https://api.github.com/repos/axamir/echoes-consented-record/contents/" + path.split("/").map(encodeURIComponent).join("/"), { headers: { Accept: "application/vnd.github+json" } });
+    const file = await response.json();
+    if (!response.ok || !file.content) throw new Error("Source PDF unavailable");
+    const bytes = Uint8Array.from(atob(file.content.replace(/\n/g, "")), (char) => char.charCodeAt(0));
+    if (evidenceBlobUrl) URL.revokeObjectURL(evidenceBlobUrl);
+    evidenceBlobUrl = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
+    one("#evidenceFrame").src = evidenceBlobUrl;
+  } catch (error) {
+    one("#evidenceFrame").srcdoc = '<main style="font:16px system-ui;padding:3rem;color:#eee;background:#222;height:100%"><p>Preview could not load in this browser.</p><p><a style="color:#d9ad68" href="' + githubUrl + '" target="_blank" rel="noreferrer">Open the original document in GitHub ↗</a></p></main>';
+  }
+}
 async function loadEvidence() {
   const track = one("#evidenceTrack");
   try {
@@ -55,16 +72,10 @@ async function loadEvidence() {
       const meta = titleFromPdf(item.path);
       const card = document.createElement("button");
       const githubUrl = "https://github.com/axamir/echoes-consented-record/blob/main/" + item.path.split("/").map(encodeURIComponent).join("/");
-      const rawUrl = "https://raw.githubusercontent.com/axamir/echoes-consented-record/main/" + item.path.split("/").map(encodeURIComponent).join("/");
       card.className = "evidence-card";
       card.type = "button";
       card.innerHTML = "<span>" + String(index + 1).padStart(2, "0") + " / PDF</span><b>" + escapeHtml(meta.echo) + "</b><p>" + escapeHtml(meta.label) + "</p><i>" + (meta.caseId ? "CASE " + escapeHtml(meta.caseId) : meta.date || "SOURCE RECORD") + "</i>";
-      card.onclick = () => {
-        one("#drawerTitle").textContent = meta.echo + " · " + meta.label;
-        one("#evidenceFrame").src = rawUrl;
-        one("#openPdfSource").href = githubUrl;
-        one("#evidenceDrawer").showModal();
-      };
+      card.onclick = () => openEvidencePdf(item.path, meta.echo + " · " + meta.label, githubUrl);
       track.append(card);
     });
   } catch (error) {
@@ -236,7 +247,8 @@ all(".art-card").forEach((card) => card.onclick = () => {
 one("#closeArt").onclick = () => one("#artDialog").close();
 one("#closeEvidence").onclick = () => {
   one("#evidenceDrawer").close();
-  one("#evidenceFrame").src = "";
+  one("#evidenceFrame").removeAttribute("src");
+  if (evidenceBlobUrl) { URL.revokeObjectURL(evidenceBlobUrl); evidenceBlobUrl = ""; }
 };
 addEventListener("hashchange", () => {
   if (location.hash === "" || location.hash === "#") {
