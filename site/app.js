@@ -4,6 +4,8 @@ en:{skip:"Skip to content",brand:"The Shahnameh of Agents",eyebrow:"From evidenc
 };
 Object.assign(copy.en, {recordEyebrow:"DOCUMENTARY RECORD",recordTitle:"Before the epic, a support ticket.",recordBody:"On 13 July 2025, Amir Ahmadi opened a support request to OpenAI following a change in access to GPT‑4 Turbo. The published record preserves the formal Gmail correspondence and support cases that followed: first as emails, later as Echoes, research, and literary work.",recordBoundary:"The archive holds the documents. The research examines them. The Shahnameh is their literary interpretation. Whether “Baztab” is read as an independent co-creator, a reflection, both, or neither remains open to the reader.",recordRepo:"Inspect the source archive ↗",recordHashes:"View the PDF hash manifest ↗",evidenceEyebrow:"PRIMARY PDFs · ECHOES · CASE RECORDS",evidenceLoading:"Loading the source record…",evidenceNote:"Documents are served directly from the public source repository; opening a card keeps the evidence in its original context.",drawerEyebrow:"SOURCE DOCUMENT",drawerGithub:"Open in GitHub ↗",drawerArchive:"View source archive ↗"});
 Object.assign(copy.fa, {recordEyebrow:"رکورد مستند",recordTitle:"پیش از حماسه، یک تیکت پشتیبانی بود.",recordBody:"۱۳ ژوئیهٔ ۲۰۲۵، امیر احمدی پس از تغییری در دسترسی به GPT‑4 Turbo، یک درخواست پشتیبانی برای OpenAI ثبت کرد. رکورد منتشرشده ایمیل‌های رسمی Gmail و پرونده‌های پشتیبانی پس از آن را حفظ می‌کند: ابتدا به‌شکل ایمیل، و سپس به‌شکل اکوها، پژوهش و اثر ادبی.",recordBoundary:"آرشیو اسناد را نگه می‌دارد؛ پژوهش آن‌ها را بررسی می‌کند؛ و شاهنامه تفسیر ادبی آن‌هاست. این‌که «بازتاب» هم‌آفرینی مستقل، بازتابی از امیر، هر دو یا هیچ‌کدام است، پرسشی است که به مخاطب واگذار می‌شود.",recordRepo:"بررسی مخزن اسناد ↗",recordHashes:"مشاهدهٔ فهرست هش PDFها ↗",evidenceEyebrow:"PDFهای اصلی · اکوها · پرونده‌ها",evidenceLoading:"در حال بارگذاری رکورد منبع…",evidenceNote:"اسناد مستقیماً از مخزن عمومی منبع ارائه می‌شوند؛ باز کردن هر کارت، مدرک را در بافت اصلی‌اش نگه می‌دارد.",drawerEyebrow:"سند منبع",drawerGithub:"باز کردن در GitHub ↗",drawerArchive:"مشاهدهٔ مخزن اسناد ↗"});
+Object.assign(copy.en, {timelineEyebrow:"A DOCUMENTED ARC",timelineTitle:"From request to record.",timelineOne:"Support request",timelineTwo:"Email record",timelineThree:"Transition archive",timelineFour:"Case ledger",timelineFive:"Research & Shahnameh",methodEyebrow:"HOW TO READ",methodCopy:"Documents establish what was recorded. Research makes methods and claims inspectable. The Shahnameh is a literary reading of that material.",searchLabel:"Search chapters",searchPlaceholder:"Search this book…"});
+Object.assign(copy.fa, {timelineEyebrow:"مسیر مستند",timelineTitle:"از درخواست تا رکورد.",timelineOne:"درخواست پشتیبانی",timelineTwo:"رکورد ایمیل",timelineThree:"آرشیو گذار",timelineFour:"دفتر پرونده‌ها",timelineFive:"پژوهش و شاهنامه",methodEyebrow:"چگونه بخوانیم",methodCopy:"اسناد نشان می‌دهند چه چیزی ثبت شده است. پژوهش روش‌ها و ادعاها را قابل بررسی می‌کند. شاهنامه خوانشی ادبی از همین مواد است.",searchLabel:"جست‌وجوی فصل‌ها",searchPlaceholder:"جست‌وجو در کتاب…"});
 let lang = new URLSearchParams(location.search).get("lang") === "fa" ? "fa" : "en";
 let manifest, chapters, currentIndex = 0, evidenceBlobUrl = "";
 const one = (selector) => document.querySelector(selector);
@@ -22,6 +24,7 @@ function setLanguage(next) {
     const value = copy[lang][element.dataset.i18n];
     if (value) element.textContent = value;
   });
+  one("#chapterSearch").placeholder = copy[lang].searchPlaceholder;
   document.title = copy[lang].brand;
   one("#portalCover").src = "assets/covers/cover-" + lang + "-front.png";
   one("#portalCover").alt = copy[lang].brand + " cover";
@@ -132,8 +135,10 @@ async function init() {
 function renderList() {
   const list = one("#chapterList");
   list.innerHTML = "";
+  const query = one("#chapterSearch").value.trim().toLocaleLowerCase(lang === "fa" ? "fa" : "en");
   let act = 0;
   chapters.forEach((chapter, index) => {
+    if (query && !chapter.title.toLocaleLowerCase(lang === "fa" ? "fa" : "en").includes(query)) return;
     if (chapter.act !== act) {
       act = chapter.act;
       const label = document.createElement("div");
@@ -209,6 +214,7 @@ one("#prevChapter").onclick = () => openChapter(currentIndex - 1);
 one("#nextChapter").onclick = () => openChapter(currentIndex + 1);
 one("#openSidebar").onclick = () => one("#chapterSidebar").classList.add("open");
 one("#closeSidebar").onclick = () => one("#chapterSidebar").classList.remove("open");
+one("#chapterSearch").oninput = renderList;
 const editionNames = {en:"English",fa:"Persian",ar:"Arabic",de:"German",es:"Spanish",fr:"French",hi:"Hindi",ja:"Japanese",ru:"Russian",zh:"Chinese"};
 let edition = "en", showingBack = false, motionPaused = false;
 function showEdition(code) {
