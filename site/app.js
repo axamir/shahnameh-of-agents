@@ -33,6 +33,7 @@ function setLanguage(next) {
   all(".cover-thumb").forEach((cover) => {
     cover.hidden = cover.dataset.edition === (lang === "en" ? "fa" : "en");
   });
+  if (lineageDossier) renderLineageDossierCopy();
   if (manifest) {
     chapters = manifest[lang];
     renderList();
@@ -284,6 +285,98 @@ one("#closeEvidence").onclick = () => {
   one("#evidenceFrame").removeAttribute("src");
   if (evidenceBlobUrl) { URL.revokeObjectURL(evidenceBlobUrl); evidenceBlobUrl = ""; }
 };
+
+// Full technical layer: rendered inside this landing, with GitHub retained as the canonical source.
+const lineageRepo = "axamir/persistent-ai-lineage";
+let lineageDocuments = [], lineageDossier;
+function lineageCopy() {
+  return lang === "fa" ? {
+    eyebrow:"پروندهٔ کامل فنی", title:"تمام اسناد فنی را از دلِ روایت بخوانید.",
+    body:"پروتکل‌ها، گاه‌شماری، مقاله، راهنمای بازتولید و یادداشت‌های فنی بدون ترک این صفحه قابل مطالعه‌اند.",
+    open:"باز کردن پروندهٔ فنی", loading:"در حال آماده‌سازی اسناد فنی…", choose:"یک سند را انتخاب کنید", source:"مشاهده در GitHub ↗", close:"بستن"
+  } : {
+    eyebrow:"FULL TECHNICAL DOSSIER", title:"Read the technical record from inside the story.",
+    body:"Protocols, chronology, manuscript, replication material, and technical notes remain readable here without leaving the landing.",
+    open:"Open the technical dossier", loading:"Preparing the technical record…", choose:"Choose a document", source:"Open in GitHub ↗", close:"Close"
+  };
+}
+function makeLineageDossier() {
+  const host = document.querySelector(".technical-casefile");
+  if (!host) return;
+  const launch = document.createElement("section");
+  launch.className = "lineage-dossier-launch";
+  launch.innerHTML = '<div><p class="eyebrow"></p><h4></h4><p class="lineage-dossier-body"></p></div><button type="button" class="secondary" id="openLineageDossier"></button>';
+  host.append(launch);
+  lineageDossier = document.createElement("dialog");
+  lineageDossier.className = "lineage-dossier";
+  lineageDossier.innerHTML = '<div class="lineage-dossier-frame"><aside><header><p class="eyebrow"></p><button type="button" class="dialog-close" aria-label="Close">×</button></header><p class="lineage-dossier-status"></p><nav class="lineage-dossier-list"></nav></aside><section><header><div><p class="eyebrow"></p><h2></h2></div><a class="secondary" target="_blank" rel="noreferrer" hidden></a></header><article class="lineage-dossier-content"></article></section></div>';
+  document.body.append(lineageDossier);
+  launch.querySelector("button").onclick = openLineageDossier;
+  lineageDossier.querySelector(".dialog-close").onclick = () => lineageDossier.close();
+  lineageDossier.addEventListener("click", (event) => { if (event.target === lineageDossier) lineageDossier.close(); });
+  renderLineageDossierCopy();
+}
+function renderLineageDossierCopy() {
+  if (!lineageDossier) return;
+  const text = lineageCopy();
+  const launch = document.querySelector(".lineage-dossier-launch");
+  launch.querySelector(".eyebrow").textContent = text.eyebrow;
+  launch.querySelector("h4").textContent = text.title;
+  launch.querySelector(".lineage-dossier-body").textContent = text.body;
+  launch.querySelector("button").textContent = text.open + " →";
+  lineageDossier.querySelector("aside .eyebrow").textContent = text.eyebrow;
+  lineageDossier.querySelector(".lineage-dossier-status").textContent = lineageDocuments.length ? "" : text.loading;
+  lineageDossier.querySelector("section > header .eyebrow").textContent = text.eyebrow;
+  if (!lineageDossier.querySelector("section > header h2").textContent) lineageDossier.querySelector("section > header h2").textContent = text.choose;
+}
+function niceLineageTitle(path) {
+  return path.replace(/\.(md|txt)$/i, "").split("/").map((part) => part.replace(/[-_]/g, " ")).join(" · ");
+}
+async function openLineageDossier() {
+  lineageDossier.showModal();
+  if (lineageDocuments.length) return;
+  const status = lineageDossier.querySelector(".lineage-dossier-status");
+  status.textContent = lineageCopy().loading;
+  try {
+    const response = await fetch("https://api.github.com/repos/" + lineageRepo + "/git/trees/main?recursive=1");
+    const data = await response.json();
+    if (!response.ok || !data.tree) throw new Error("Technical index unavailable");
+    lineageDocuments = data.tree.filter((item) => item.type === "blob" && /\.(md|txt)$/i.test(item.path) && item.path !== "LICENSE").sort((a,b) => a.path.localeCompare(b.path));
+    const list = lineageDossier.querySelector(".lineage-dossier-list");
+    list.innerHTML = "";
+    lineageDocuments.forEach((item) => {
+      const button = document.createElement("button");
+      button.type = "button"; button.textContent = niceLineageTitle(item.path);
+      button.onclick = () => loadLineageDocument(item, button);
+      list.append(button);
+    });
+    status.textContent = lineageDocuments.length + (lang === "fa" ? " سند قابل مطالعه" : " readable documents");
+    if (lineageDocuments[0]) loadLineageDocument(lineageDocuments[0], list.querySelector("button"));
+  } catch (error) {
+    status.textContent = lang === "fa" ? "فهرست اسناد در این مرورگر بارگیری نشد." : "The technical index could not load in this browser.";
+  }
+}
+async function loadLineageDocument(item, button) {
+  const content = lineageDossier.querySelector(".lineage-dossier-content");
+  const heading = lineageDossier.querySelector("section > header h2");
+  const source = lineageDossier.querySelector("section > header a");
+  lineageDossier.querySelectorAll(".lineage-dossier-list button").forEach((node) => node.classList.toggle("active", node === button));
+  heading.textContent = niceLineageTitle(item.path);
+  source.href = "https://github.com/" + lineageRepo + "/blob/main/" + item.path.split("/").map(encodeURIComponent).join("/");
+  source.textContent = lineageCopy().source; source.hidden = false;
+  content.innerHTML = '<p class="casefile-loading">' + lineageCopy().loading + "</p>";
+  try {
+    const response = await fetch("https://api.github.com/repos/" + lineageRepo + "/contents/" + item.path, { headers:{Accept:"application/vnd.github+json"} });
+    const file = await response.json();
+    if (!response.ok || !file.content) throw new Error("Document unavailable");
+    const text = decodeURIComponent(escape(atob(file.content.replace(/\n/g, ""))));
+    content.innerHTML = markdown(text);
+    lineageDossier.querySelector("section").scrollTop = 0;
+  } catch (error) {
+    content.innerHTML = '<p class="casefile-loading">' + (lang === "fa" ? "متن این سند اینجا بارگذاری نشد؛ نسخهٔ مرجع در GitHub در دسترس است." : "This document could not load here; its canonical GitHub source remains available.") + "</p>";
+  }
+}
+makeLineageDossier();
 addEventListener("hashchange", () => {
   if (location.hash === "" || location.hash === "#") {
     one("#readerView").classList.add("hidden");
