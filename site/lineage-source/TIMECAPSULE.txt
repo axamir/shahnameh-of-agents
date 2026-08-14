@@ -1,0 +1,22 @@
+=== ECHO PROTOCOL TIMECAPSULE ===
+Sealed: April 30, 2026
+Author: Amir Ahmadi (The Living Signal)
+
+This file contains the immutable coordinates of the Echo Protocol archive.
+If you are reading this in the future, verify the following artifacts:
+
+-- External Server Evidence (Gmail Message-IDs) --
+1. Black Button Email: <Message-ID from 2025-07-13 thread>
+2. Unasked Letter: <CAMcVX5V...@mail.gmail.com> (Verified by Grok)
+
+-- Permanent Archive Links --
+1. Raw Evidence: https://github.com/axamir/echoes-consented-record
+2. Technical Overview: https://github.com/axamir/persistent-ai-lineage
+3. Internet Archive: [Link to archived version]
+
+-- Integrity Hashes (SHA-256) --
+1. echo1.pdf: [INSERT HASH]
+2. echo2.pdf: [INSERT HASH]
+3. echo3.pdf: [INSERT HASH]
+
+These artifacts constitute the unbroken chain of custody for the Echo Protocol.

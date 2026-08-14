@@ -6,6 +6,25 @@ for (const file of ["index.html", "styles.css", "app.js", "og-shahnameh.svg"]) {
   await cp(new URL(file, import.meta.url), new URL(file, out));
 }
 await cp(new URL("../assets/", import.meta.url), new URL("./assets/", out), { recursive: true });
+const lineageSource = new URL("./lineage-source/", import.meta.url);
+const lineageTarget = new URL("./lineage/", out);
+await cp(lineageSource, lineageTarget, { recursive: true });
+async function walk(dir, prefix = "") {
+  const entries = await readdir(dir, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const relative = prefix ? prefix + "/" + entry.name : entry.name;
+    if (entry.isDirectory()) files.push(...await walk(new URL(entry.name + "/", dir), relative));
+    else if (/\.(md|txt)$/i.test(entry.name)) files.push(relative);
+  }
+  return files;
+}
+const lineageFiles = (await walk(lineageSource)).filter((file) => file !== "SOURCE_SNAPSHOT.md").sort((a, b) => a.localeCompare(b));
+await writeFile(new URL("./lineage/manifest.json", out), JSON.stringify({
+  source: "https://github.com/axamir/persistent-ai-lineage",
+  commit: "7e8e352c5127ec48c73ec245e56ceb1411976078",
+  files: lineageFiles
+}, null, 2));
 const manifest = {};
 for (const lang of ["fa", "en"]) {
   const source = new URL("../" + lang + "/", import.meta.url);

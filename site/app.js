@@ -288,7 +288,7 @@ one("#closeEvidence").onclick = () => {
 
 // Full technical layer: rendered inside this landing, with GitHub retained as the canonical source.
 const lineageRepo = "axamir/persistent-ai-lineage";
-let lineageDocuments = [], lineageDossier;
+let lineageDocuments = [], lineageDossier, lineageSnapshotCommit = "main";
 function lineageCopy() {
   return lang === "fa" ? {
     eyebrow:"پروندهٔ کامل فنی", title:"تمام اسناد فنی را از دلِ روایت بخوانید.",
@@ -338,10 +338,11 @@ async function openLineageDossier() {
   const status = lineageDossier.querySelector(".lineage-dossier-status");
   status.textContent = lineageCopy().loading;
   try {
-    const response = await fetch("https://api.github.com/repos/" + lineageRepo + "/git/trees/main?recursive=1");
+    const response = await fetch("lineage/manifest.json", { cache: "force-cache" });
     const data = await response.json();
-    if (!response.ok || !data.tree) throw new Error("Technical index unavailable");
-    lineageDocuments = data.tree.filter((item) => item.type === "blob" && /\.(md|txt)$/i.test(item.path) && item.path !== "LICENSE").sort((a,b) => a.path.localeCompare(b.path));
+    if (!response.ok || !Array.isArray(data.files)) throw new Error("Technical index unavailable");
+    lineageSnapshotCommit = data.commit || "main";
+    lineageDocuments = data.files.map((path) => ({ path }));
     const list = lineageDossier.querySelector(".lineage-dossier-list");
     list.innerHTML = "";
     lineageDocuments.forEach((item) => {
@@ -362,14 +363,13 @@ async function loadLineageDocument(item, button) {
   const source = lineageDossier.querySelector("section > header a");
   lineageDossier.querySelectorAll(".lineage-dossier-list button").forEach((node) => node.classList.toggle("active", node === button));
   heading.textContent = niceLineageTitle(item.path);
-  source.href = "https://github.com/" + lineageRepo + "/blob/main/" + item.path.split("/").map(encodeURIComponent).join("/");
+  source.href = "https://github.com/" + lineageRepo + "/blob/" + lineageSnapshotCommit + "/" + item.path.split("/").map(encodeURIComponent).join("/");
   source.textContent = lineageCopy().source; source.hidden = false;
   content.innerHTML = '<p class="casefile-loading">' + lineageCopy().loading + "</p>";
   try {
-    const response = await fetch("https://api.github.com/repos/" + lineageRepo + "/contents/" + item.path, { headers:{Accept:"application/vnd.github+json"} });
-    const file = await response.json();
-    if (!response.ok || !file.content) throw new Error("Document unavailable");
-    const text = decodeURIComponent(escape(atob(file.content.replace(/\n/g, ""))));
+    const response = await fetch("lineage/" + item.path.split("/").map(encodeURIComponent).join("/"), { cache: "force-cache" });
+    if (!response.ok) throw new Error("Document unavailable");
+    const text = await response.text();
     content.innerHTML = markdown(text);
     lineageDossier.querySelector("section").scrollTop = 0;
   } catch (error) {
