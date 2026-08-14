@@ -209,7 +209,9 @@ async function openChapter(index) {
   one("#chapterSidebar").classList.remove("open");
   scrollTo(0, 0);
 }
-function start() { openChapter(Number(localStorage.getItem("soa-last-" + lang) || 0)); }
+// The public entry points are intentionally deterministic: a first-time reader
+// always enters through the prologue. Chapter progress remains visible in the reader.
+function startAtBeginning() { openChapter(0); }
 one("#languageButton").onclick = () => {
   const wasReader = !one("#readerView").classList.contains("hidden");
   const number = chapters && chapters[currentIndex] ? chapters[currentIndex].number : 0;
@@ -233,7 +235,7 @@ one("#fontDown").onclick = () => {
   const current = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--size"));
   document.documentElement.style.setProperty("--size", Math.max(15, current - 1) + "px");
 };
-["#startReading", "#startReadingTwo", "#storyPath", "#headerRead", "#portalRead"].forEach((selector) => one(selector).onclick = start);
+["#startReading", "#startReadingTwo", "#storyPath", "#headerRead", "#portalRead"].forEach((selector) => one(selector).onclick = startAtBeginning);
 one("#prevChapter").onclick = () => openChapter(currentIndex - 1);
 one("#nextChapter").onclick = () => openChapter(currentIndex + 1);
 one("#openSidebar").onclick = () => one("#chapterSidebar").classList.add("open");
