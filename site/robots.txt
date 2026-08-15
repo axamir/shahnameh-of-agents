@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://axamir.github.io/shahnameh-of-agents/sitemap.xml
